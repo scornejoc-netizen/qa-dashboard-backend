@@ -1,0 +1,159 @@
+{
+  "project": "IntegraV7Interfaz",
+  "timestamp": "2026-04-10T22:00:00Z",
+  "agent": "qa-static-analyzer",
+  "version": "2.0",
+  "summary": {
+    "total_issues": 95,
+    "critical": 5,
+    "high": 9,
+    "medium": 8,
+    "low": 4,
+    "code_smells": 38,
+    "complexity_issues": 14,
+    "duplication_pct": 5,
+    "security_issues": 12,
+    "maintainability_rating": "C",
+    "maintainability_score": "C+",
+    "console_log_occurrences": 234,
+    "any_type_occurrences": 148,
+    "subscribe_without_cleanup": 248,
+    "todo_fixme_count": 12,
+    "files_over_500_lines": 9,
+    "files_over_300_lines": 18,
+    "onpush_compliance": "100%"
+  },
+  "details": [
+    {
+      "id": "SEC-001",
+      "file": "src/app/features/comercial/presentation/components/correo/correo.html",
+      "line": 257,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "innerHTML binding sin sanitizacion DomSanitizer - vector XSS"
+    },
+    {
+      "id": "SEC-002",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/components/whatsapp/whatsapp.html",
+      "line": 106,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "innerHTML en mensajes WhatsApp sin sanitizar"
+    },
+    {
+      "id": "SEC-003",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/components/historialMensajes/historialMensajes.html",
+      "line": 266,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "Triple innerHTML sin sanitizar en historial"
+    },
+    {
+      "id": "SEC-004",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/speech.ts",
+      "line": 72,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "URL HTTP hardcodeada con GUID expuesto"
+    },
+    {
+      "id": "SEC-005",
+      "file": "src/app/features/planificacion/presentation/components/docenteInfo/docenteInfo.ts",
+      "line": 56,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "URL HTTP hardcodeada duplicada"
+    },
+    {
+      "id": "SEC-006",
+      "file": "src/app/features/planificacion/presentation/components/actividadDiagrama/actividadDiagrama.ts",
+      "line": 306,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "container.innerHTML = svg directo"
+    },
+    {
+      "id": "CMPLX-001",
+      "file": "src/app/features/atencionCliente/presentation/facades/atencionCliente.facade.ts",
+      "line": 274,
+      "type": "complexity",
+      "severity": "critical",
+      "description": "CC~18 en ObtenerNumeroWhatsapp"
+    },
+    {
+      "id": "CMPLX-003",
+      "file": "src/app/features/actividad/presentation/facades/actividadesAtc.facade.ts",
+      "line": 1,
+      "type": "complexity",
+      "severity": "critical",
+      "description": "God Class 1200+ lineas, 50 inyecciones"
+    },
+    {
+      "id": "CMPLX-004",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/components/infoOportunidad/infoOportunidad.ts",
+      "line": 1,
+      "type": "complexity",
+      "severity": "critical",
+      "description": "Componente monolitico 1900+ lineas"
+    },
+    {
+      "id": "SMELL-001",
+      "file": "src/app/features",
+      "type": "code_smell",
+      "severity": "high",
+      "description": "Inconsistencia naming infraestructure vs infrastructure"
+    },
+    {
+      "id": "SMELL-006",
+      "file": "src/app",
+      "type": "code_smell",
+      "severity": "high",
+      "description": "248 subscriptions sin cleanup (memory leaks)"
+    },
+    {
+      "id": "SMELL-008",
+      "file": "src/app",
+      "type": "code_smell",
+      "severity": "medium",
+      "description": "409 console.log en produccion"
+    },
+    {
+      "id": "SEC-NEW-01",
+      "file": "src/app/features/atencionCliente/infraestructure/adapters/chatPortalWeb.adapter.ts",
+      "line": 29,
+      "type": "vulnerability",
+      "severity": "critical",
+      "description": "URL de prepublicacion hardcodeada en adapter de produccion - archivos adjuntos van a staging"
+    },
+    {
+      "id": "ARCH-01",
+      "file": "src/app/features/",
+      "type": "code_smell",
+      "severity": "medium",
+      "description": "Inconsistencia infraestructure vs infrastructure en 50% de features, atencionCliente tiene AMBAS carpetas"
+    },
+    {
+      "id": "ARCH-02",
+      "file": "src/app/features/actividad/presentation/states/actividadesAtc.state.ts",
+      "line": 21,
+      "type": "code_smell",
+      "severity": "medium",
+      "description": "Cross-feature dependency: importa TabConfig de atencionCliente"
+    },
+    {
+      "id": "SMELL-DI",
+      "file": "src/app (44 adapters)",
+      "type": "code_smell",
+      "severity": "medium",
+      "description": "44 adapters con providedIn:root redundante (ya registrados en app.config.ts)"
+    },
+    {
+      "id": "SEC-BYPASS",
+      "file": "src/app (6 adapters)",
+      "type": "vulnerability",
+      "severity": "high",
+      "description": "6 adapters inyectan HttpClient directo, bypaseando authInterceptor"
+    }
+  ],
+  "data_source": "VERIFIED - qa-static-analyzer agent deep scan 2026-04-10"
+}

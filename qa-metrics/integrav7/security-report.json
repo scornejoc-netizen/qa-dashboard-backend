@@ -1,0 +1,416 @@
+{
+  "project": "IntegraV7Interfaz",
+  "timestamp": "2026-04-10T21:45:00Z",
+  "agent": "qa-security-tester",
+  "framework": "Angular 20 + SSR (Express) + Standalone Components",
+  "summary": {
+    "total_findings": 22,
+    "critical": 2,
+    "high": 10,
+    "medium": 7,
+    "low": 3,
+    "info": 0
+  },
+  "findings": [
+    {
+      "id": "SEC-001",
+      "title": "Token JWT almacenado en localStorage (vulnerable a XSS)",
+      "severity": "HIGH",
+      "category": "OWASP-A07 - Identification and Authentication Failures",
+      "file": "src/app/core/infraestructure/services/token.service.ts",
+      "line": 35,
+      "description": "El token JWT de autenticacion se almacena en localStorage bajo la clave 'token'. localStorage es accesible desde cualquier JavaScript ejecutado en el origen, lo que lo hace vulnerable a robo de token via XSS. Si un atacante logra inyectar JS malicioso, puede extraer el token con localStorage.getItem('token') y reutilizarlo desde otro contexto.",
+      "recommendation": "Migrar a HttpOnly cookies para el almacenamiento del token. HttpOnly cookies no son accesibles desde JavaScript, eliminando el vector de robo via XSS. Si no es posible por la arquitectura SSR/API, como minimo implementar: (1) token rotation agresiva, (2) validacion de fingerprint de sesion en el backend, (3) Content Security Policy estricto para reducir superficie de XSS.",
+      "cwe": "CWE-922",
+      "evidence": "localStorage.getItem('token') en token.service.ts:35 y localStorage.setItem('token', token) en token.service.ts:48",
+      "stride": "Spoofing, Information Disclosure"
+    },
+    {
+      "id": "SEC-002",
+      "title": "Datos de sesion de usuario en localStorage sin cifrado",
+      "severity": "HIGH",
+      "category": "OWASP-A02 - Cryptographic Failures",
+      "file": "src/app/core/application/facades/session.facade.ts",
+      "line": 67,
+      "description": "El objeto de sesion del usuario (userId, areaTrabajo, idPersonal, idRol, userName) se persiste en localStorage bajo la clave 'user_session' en texto plano como JSON serializado. Cualquier script con acceso al origen puede leer estos datos. Ademas, en token.service.ts se hace localStorage.clear() en escenarios de error de cuota, lo que puede desencadenar comportamientos inesperados.",
+      "recommendation": "Cifrar los datos de sesion antes de almacenarlos en localStorage, o limitar la informacion persistida al minimo necesario (solo el ID de sesion). Considerar el uso de sessionStorage para datos que no necesitan persistir entre cierres de tab.",
+      "cwe": "CWE-312",
+      "evidence": "storage.setItem(STORAGE_KEYS.USER_SESSION, { id, areaTrabajo, idPersonal, idRol, userName }) en session.facade.ts:68-73",
+      "stride": "Information Disclosure"
+    },
+    {
+      "id": "SEC-003",
+      "title": "Credenciales de telefonia (password3Cx, contrasenaAsterisk) recibidas y almacenadas en entidad de dominio",
+      "severity": "CRITICAL",
+      "category": "OWASP-A02 - Cryptographic Failures",
+      "file": "src/app/features/personal/domain/entities/personal.entity.ts",
+      "line": 17,
+      "description": "La entidad Personal incluye campos password3Cx y contrasenaAsterisk que son credenciales de sistemas telefonicos. Estos campos viajan desde el backend en la respuesta de la API, se mapean al dominio del frontend y quedan accesibles en memoria durante toda la sesion. El getter telefoniaConfig() expone estas credenciales directamente. Si Sentry captura una excepcion que incluya el objeto Personal (por replaysOnErrorSampleRate: 1.0 y sendDefaultPii: true), las credenciales pueden ser enviadas a Sentry.",
+      "recommendation": "El backend NO deberia enviar credenciales en texto plano al frontend. El proceso de autenticacion con 3CX/Asterisk deberia ocurrir exclusivamente en el backend via proxy autenticado. Si el widget de telefonia necesita un token, el backend debe generar un token de corta duracion especifico para ese proposito (ya implementado parcialmente con Wavix). Eliminar password3Cx y contrasenaAsterisk de los DTOs y entidades del frontend.",
+      "cwe": "CWE-256",
+      "evidence": "personal.entity.ts:17 (private readonly password3Cx), personal.entity.ts:108-128 (getter telefoniaConfig expone password3Cx y contrasenaAsterisk)",
+      "stride": "Information Disclosure, Tampering"
+    },
+    {
+      "id": "SEC-004",
+      "title": "Contrasena de alumno (AccesoAlumnoDto) recibida en texto plano desde el backend",
+      "severity": "CRITICAL",
+      "category": "OWASP-A02 - Cryptographic Failures",
+      "file": "src/app/features/atencionCliente/application/dtos/portalAcademico/accesoAlumno.dto.ts",
+      "line": 15,
+      "description": "El endpoint ObtenerAccesosAlumno retorna la contrasena del alumno en texto plano en el campo 'contrasenia'. Este DTO es recibido por el frontend, procesado por el facade y, aunque actualmente solo se usa el campo 'id' (GUID), la contrasena queda en memoria como parte del objeto AccesoAlumnoDto. Si se agrega logging o si Sentry captura contexto de error con este objeto, la contrasena podria ser expuesta. El DTO mismo documenta el campo con un ejemplo real de contrasena ('qvzrQB').",
+      "recommendation": "El backend no deberia enviar la contrasena del alumno al CRM frontend. Si el proposito es proporcionar acceso al portal academico, el backend deberia generar un token de acceso temporal (magic link / one-time-token). Si la contrasena es absolutamente necesaria, el endpoint deberia requerir autorizacion adicional y el frontend deberia evitar almacenarla en cualquier estado reactivo o el localStorage.",
+      "cwe": "CWE-312",
+      "evidence": "accesoAlumno.dto.ts:15 (contrasenia: string), portalAcademico.facade.ts:325-327 (el campo 'contrasenia' queda disponible en el objeto accesoAlumno aunque no se use)",
+      "stride": "Information Disclosure"
+    },
+    {
+      "id": "SEC-005",
+      "title": "Sentry configurado con sendDefaultPii: true y Session Replay habilitado",
+      "severity": "HIGH",
+      "category": "OWASP-A09 - Security Logging and Monitoring Failures",
+      "file": "src/main.ts",
+      "line": 16,
+      "description": "La configuracion de Sentry incluye: (1) sendDefaultPii: true, lo que hace que Sentry envie automaticamente datos como IP, cookies, headers de autenticacion y parametros de formularios. (2) replaysOnErrorSampleRate: 1.0, grabando el 100% de las sesiones en que ocurre un error. (3) replaysSessionSampleRate: 0.1, grabando el 10% de todas las sesiones. El replay de Sentry graba interacciones del usuario incluyendo potencialmente campos de formulario con datos sensibles (aunque Sentry intenta enmascarar inputs, no es infalible). Ademas, el DSN de Sentry esta hardcodeado y es identico en todos los ambientes.",
+      "recommendation": "Establecer sendDefaultPii: false. Revisar y configurar la lista de privacidad de Sentry (privacy options) para excluir campos sensibles del replay. Reducir replaysSessionSampleRate en produccion. Considerar usar DSNs diferentes por ambiente para separar telemetria. Asegurar que los datos capturados en Sentry cumplen con GDPR/normativas de privacidad aplicables.",
+      "cwe": "CWE-532",
+      "evidence": "main.ts:16 (sendDefaultPii: true), main.ts:14 (replaysSessionSampleRate: 0.1), main.ts:15 (replaysOnErrorSampleRate: 1.0)",
+      "stride": "Information Disclosure"
+    },
+    {
+      "id": "SEC-006",
+      "title": "DSN de Sentry hardcodeado e identico en todos los ambientes",
+      "severity": "MEDIUM",
+      "category": "OWASP-A05 - Security Misconfiguration",
+      "file": "src/env/environment.ts",
+      "line": 8,
+      "description": "El DSN de Sentry (https://1161dfc59f843332b1b41177f1d875fb@o4510717024993280.ingest.us.sentry.io/4510717064249344) es identico en development, prepublicacion y production. El DSN actua como una API key publica que permite enviar eventos a la organizacion de Sentry. Al estar embebido en el bundle JS del frontend, cualquier persona puede inspeccionarlo y usarlo para enviar eventos falsos o spam a Sentry, potencialmente saturando alertas o cuota.",
+      "recommendation": "Aunque los DSNs de Sentry son inherentemente 'semi-publicos' por diseno, se recomienda: (1) Usar DSNs diferentes por ambiente para separar datos de prod/staging/dev. (2) Configurar rate limiting en Sentry para ese proyecto. (3) Considerar un Sentry Relay como proxy para no exponer el DSN directamente.",
+      "cwe": "CWE-798",
+      "evidence": "environment.ts:8, environment.prod.ts:7, environment.prepublicacion.ts:7 (mismo DSN en los 3 archivos)",
+      "stride": "Denial of Service, Information Disclosure"
+    },
+    {
+      "id": "SEC-007",
+      "title": "Multiples usos de [innerHTML] con contenido proveniente del backend sin sanitizacion explicita",
+      "severity": "HIGH",
+      "category": "OWASP-A03 - Injection (XSS)",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/components/historialMensajes/historialMensajes.html",
+      "line": 266,
+      "description": "Se encontraron 10+ usos del binding [innerHTML] con contenido que proviene del backend (mensajes de WhatsApp, cuerpos de correo electronico, beneficios en HTML). Angular aplica sanitizacion automatica via DomSanitizer en [innerHTML], pero esta sanitizacion puede ser insuficiente o bypasseada en ciertos edge cases. Los mensajes de WhatsApp y correos electronicos son contenido generado por usuarios externos (alumnos, proveedores), lo que los convierte en vectores de inyeccion potenciales si el backend no sanitiza adecuadamente.",
+      "recommendation": "Verificar que el backend sanitiza el HTML antes de almacenarlo. Considerar usar una libreria de sanitizacion adicional en el frontend (DOMPurify) para contenido de alta sensibilidad como mensajes de WhatsApp y cuerpos de correo. Revisar todos los [innerHTML] con datos externos: whatsapp.html:106, historialMensajes.html:266/275/365, panel-conversaciones.ts:375, inversion.html:56, correo.html:257, correoModal.html:55, correoElectronico.html:318.",
+      "cwe": "CWE-79",
+      "evidence": "historialMensajes.html:266 ([innerHTML]=\"mensaje.getMensaje\"), whatsapp.html:106 ([innerHTML]=\"msg.parsed.contenido\"), panel-conversaciones.ts:375 ([innerHTML]=\"msg.parsed.contenido\"), inversion.html:56 ([innerHTML]=\"inversion.getBeneficios\")",
+      "stride": "Injection"
+    },
+    {
+      "id": "SEC-008",
+      "title": "bypassSecurityTrustResourceUrl sin validacion de origen de URL",
+      "severity": "HIGH",
+      "category": "OWASP-A03 - Injection (XSS)",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/components/historialMensajes/historialMensajes.ts",
+      "line": 603,
+      "description": "Se usa sanitizer.bypassSecurityTrustResourceUrl(url) en dos lugares para renderizar URLs de documentos en iframes/img sin validar que la URL pertenezca a un dominio conocido y de confianza. Esto permite que una URL maliciosa proporcionada por el backend (o modificada via MITM) sea renderizada directamente en un iframe, pudiendo ejecutar contenido arbitrario. El segundo uso en documentosLegales.ts:104 aplica la misma logica.",
+      "recommendation": "Antes de llamar bypassSecurityTrustResourceUrl, validar que la URL pertenece a dominios conocidos (ej: *.bsginstitute.com, *.blob.core.windows.net). Implementar un allowlist de dominios. Considerar renderizar documentos PDF usando un viewer controlado en lugar de iframe directo.",
+      "cwe": "CWE-79",
+      "evidence": "historialMensajes.ts:603 (getSafeUrl -> bypassSecurityTrustResourceUrl), documentosLegales.ts:104 (bypassSecurityTrustResourceUrl sin validacion de dominio)",
+      "stride": "Injection"
+    },
+    {
+      "id": "SEC-009",
+      "title": "Mermaid con htmlLabels: true y contenido de backend en labels del diagrama",
+      "severity": "MEDIUM",
+      "category": "OWASP-A03 - Injection (XSS)",
+      "file": "src/app/features/planificacion/presentation/components/actividadDiagrama/actividadDiagrama.ts",
+      "line": 282,
+      "description": "Mermaid esta configurado con htmlLabels: true, lo que permite HTML en los labels del diagrama. Aunque existe un metodo sanitize() que reemplaza comillas y brackets, la sanitizacion es incompleta: no elimina tags HTML como <script>, <img onerror=...>, etc. Si un nombre de actividad o subactividad proveniente del backend contiene HTML malicioso, podria renderizarse en el SVG generado por Mermaid e inyectarse via innerHTML en el DOM (actividadDiagrama.ts:306).",
+      "recommendation": "Cambiar htmlLabels: false en la configuracion de Mermaid, o mejorar el metodo sanitize() para strip completo de tags HTML usando textContent en lugar de reemplazos parciales. El metodo actual solo reemplaza algunos caracteres pero no previene inyeccion HTML completa.",
+      "cwe": "CWE-79",
+      "evidence": "actividadDiagrama.ts:282 (htmlLabels: true), actividadDiagrama.ts:306 (container.innerHTML = svg), actividadDiagrama.ts:636-642 (sanitize() incompleto)",
+      "stride": "Injection"
+    },
+    {
+      "id": "SEC-010",
+      "title": "Sin proteccion CSRF implementada en el cliente",
+      "severity": "MEDIUM",
+      "category": "OWASP-A01 - Broken Access Control",
+      "file": "src/app/app.config.ts",
+      "line": 120,
+      "description": "No se encontro ninguna implementacion de proteccion CSRF (Cross-Site Request Forgery) en el interceptor HTTP ni en la configuracion del cliente HTTP. Aunque las APIs REST con JWT suelen ser menos vulnerables a CSRF clasico (el atacante no puede leer la respuesta), las mutaciones de estado en la API podrian ser explotadas via CSRF si el backend no valida el header Origin/Referer correctamente o acepta cookies.",
+      "recommendation": "Verificar que el backend implementa validacion de CSRF tokens o al menos valida el header Origin en todas las peticiones de mutacion (POST/PUT/DELETE/PATCH). En el frontend, si el backend requiere CSRF tokens, implementar su envio en el interceptor HTTP. Angular HttpClient con withXsrfConfiguration() puede integrarse con el mecanismo de cookies CSRF del backend.",
+      "cwe": "CWE-352",
+      "evidence": "auth.interceptor.ts solo agrega Bearer token; no hay manejo de X-CSRF-Token o XSRF-TOKEN. No se encontro withXsrfConfiguration() en provideHttpClient().",
+      "stride": "Tampering, Spoofing"
+    },
+    {
+      "id": "SEC-011",
+      "title": "Sin headers de seguridad HTTP en el servidor Express SSR",
+      "severity": "HIGH",
+      "category": "OWASP-A05 - Security Misconfiguration",
+      "file": "src/server.ts",
+      "line": 30,
+      "description": "El servidor Express SSR no configura headers de seguridad HTTP criticos: Content-Security-Policy (CSP), X-Content-Type-Options, X-Frame-Options, Strict-Transport-Security (HSTS), Referrer-Policy, Permissions-Policy. El web.config de IIS tampoco configura estos headers. Ademas, el Cache-Control global en web.config es 'public, max-age=31536000, immutable' aplicado globalmente, lo que podria cachear paginas con datos sensibles.",
+      "recommendation": "Instalar Helmet.js en el servidor Express: app.use(require('helmet')()). Configurar CSP especificando dominios permitidos para scripts, estilos, connects y frames. Agregar X-Content-Type-Options: nosniff, X-Frame-Options: DENY/SAMEORIGIN, HSTS con preload. En web.config, agregar estos headers para el servidor IIS tambien. El Cache-Control global deberia aplicarse solo a assets estaticos con hash, no a HTML.",
+      "cwe": "CWE-16",
+      "evidence": "server.ts: no hay middleware de seguridad entre express() y express.static(). web.config: customHeaders solo configura Cache-Control y elimina X-Powered-By, sin CSP ni otros headers de seguridad.",
+      "stride": "Information Disclosure, Denial of Service"
+    },
+    {
+      "id": "SEC-012",
+      "title": "Ausencia de validacion de expiracion del JWT en el cliente",
+      "severity": "MEDIUM",
+      "category": "OWASP-A07 - Identification and Authentication Failures",
+      "file": "src/app/core/infraestructure/services/token.service.ts",
+      "line": 17,
+      "description": "El metodo validateToken() solo verifica la presencia del token (!!token), sin decodificar el JWT para verificar si el campo 'exp' ha expirado. Esto significa que un token expirado sigue siendo considerado valido en el cliente hasta que el backend lo rechaza con 401. Durante este periodo, el usuario cree estar autenticado pero las llamadas a la API fallan. La ausencia de validacion cliente tambien impide implementar renovacion proactiva del token antes de su expiracion.",
+      "recommendation": "Decodificar el payload JWT (sin verificar la firma, solo para leer el campo exp) para validar expiracion en el cliente. Implementar logica de renovacion de token proactiva (silent refresh) si el backend lo soporta. Considerar instalar una libreria como jwt-decode (100% client-side, sin riesgos de seguridad adicionales).",
+      "cwe": "CWE-613",
+      "evidence": "token.service.ts:17-28 (validateToken solo hace !!token, no verifica exp). No se encontro ninguna llamada a jwtDecode o atob para parsear el JWT.",
+      "stride": "Spoofing"
+    },
+    {
+      "id": "SEC-013",
+      "title": "Console.log con token de Wavix en produccion",
+      "severity": "MEDIUM",
+      "category": "OWASP-A09 - Security Logging and Monitoring Failures",
+      "file": "src/app/core/infraestructure/services/wavixSdk.service.ts",
+      "line": 255,
+      "description": "Se encontraron multiples llamadas a console.log que exponen informacion sensible: linea 255 imprime el token completo de Wavix ('console.log(\"token\", tokenToUse)'), linea 174 imprime la configuracion completa del SDK incluyendo el token SIP, linea 187-190 imprime longitud del token. En produccion, los DevTools muestran estos logs a cualquier usuario con acceso a la consola del navegador. Si Sentry replay esta habilitado, estos logs podrian ser capturados.",
+      "recommendation": "Eliminar todos los console.log que contengan tokens o credenciales. Reemplazar con logs condicionados al ambiente (if (!environment.production) console.log(...)). Para debugging de produccion, usar Sentry breadcrumbs con datos anonimizados.",
+      "cwe": "CWE-532",
+      "evidence": "wavixSdk.service.ts:255 (console.log('token', tokenToUse)), wavixSdk.service.ts:174 (console.log('Initializing Wavix SDK with config:', config))",
+      "stride": "Information Disclosure"
+    },
+    {
+      "id": "SEC-014",
+      "title": "Metodo de prueba throwTestError() expuesto en componente de Login en produccion",
+      "severity": "LOW",
+      "category": "OWASP-A05 - Security Misconfiguration",
+      "file": "src/app/features/auth/presentation/components/login/login.ts",
+      "line": 50,
+      "description": "El componente Login contiene el metodo publico throwTestError() que lanza una excepcion deliberada para probar la integracion con Sentry. Este metodo esta marcado como 'public', lo que lo hace accesible en el template y desde pruebas, pero mas importante: permanece en el bundle de produccion, incrementando la superficie de ataque sin ningun beneficio funcional.",
+      "recommendation": "Eliminar el metodo throwTestError() del componente. Si se necesita para testing de Sentry, moverlo a un componente de admin protegido o usar el SDK de Sentry directamente en un test unitario.",
+      "cwe": "CWE-489",
+      "evidence": "login.ts:50-52 (public throwTestError(): void { throw new Error('Sentry Test Error'); })",
+      "stride": "Information Disclosure"
+    },
+    {
+      "id": "SEC-015",
+      "title": "SignalR Hub URL expone idPersonal y userName en query string",
+      "severity": "MEDIUM",
+      "category": "OWASP-A01 - Broken Access Control",
+      "file": "src/app/features/mensajeria/application/services/whatsapp-signalr.service.ts",
+      "line": 186,
+      "description": "La URL de conexion al Hub SignalR se construye con idPersonal y userName como query parameters: hubChatWhatsapp_Peru?idUsuario={idPersonal}&usuarioNombre={userName}. Estos parametros quedan visibles en: (1) logs del servidor web, (2) headers Referer de peticiones subsiguientes, (3) historial del navegador, (4) capturas de red. Si el Hub SignalR no valida el token JWT de la conexion y solo se basa en estos parametros para identificar al usuario, existe riesgo de impersonacion.",
+      "recommendation": "Verificar que el Hub SignalR valida el Bearer token JWT para autenticar al usuario, usando los parametros solo como informacion de contexto adicional (no como mecanismo de autenticacion). Preferir enviar credenciales en headers de autenticacion en lugar de query strings.",
+      "cwe": "CWE-598",
+      "evidence": "whatsapp-signalr.service.ts:186 (hubUrl con ?idUsuario=${userData.idPersonal}&usuarioNombre=${encodeURIComponent(userData.userName)})",
+      "stride": "Spoofing, Information Disclosure"
+    },
+    {
+      "id": "SEC-016",
+      "title": "authGuard permite acceso SSR sin validacion real",
+      "severity": "MEDIUM",
+      "category": "OWASP-A01 - Broken Access Control",
+      "file": "src/app/core/infraestructure/guards/auth-guard.ts",
+      "line": 12,
+      "description": "En el entorno SSR (Server-Side Rendering), el guard authGuard retorna true sin ninguna validacion, permitiendo que cualquier ruta protegida sea renderizada en el servidor sin verificar autenticacion. Aunque el comentario indica 'se validara en cliente', esto puede generar: (1) contenido HTML del estado inicial sin autenticacion enviado al cliente, (2) potencial leak de informacion si el componente realiza peticiones HTTP durante el SSR con un token no validado.",
+      "recommendation": "Verificar que en modo SSR, las rutas protegidas devuelvan un redirect al login o un estado de carga vacio, en lugar de permitir acceso sin autenticacion. Considerar implementar transferState para manejar el estado de autenticacion de forma segura entre SSR y el cliente. La configuracion actual (RenderMode.Client para todas las rutas en app.routes.server.ts) mitiga parcialmente este riesgo.",
+      "cwe": "CWE-287",
+      "evidence": "auth-guard.ts:12-14 (if (!isPlatformBrowser(platformId)) { return true; })",
+      "stride": "Spoofing"
+    },
+    {
+      "id": "SEC-017",
+      "title": "Sin rate limiting ni proteccion contra fuerza bruta en el formulario de login",
+      "severity": "LOW",
+      "category": "OWASP-A07 - Identification and Authentication Failures",
+      "file": "src/app/features/auth/presentation/components/login/login.ts",
+      "line": 39,
+      "description": "El componente de login no implementa ninguna proteccion contra ataques de fuerza bruta en el cliente: no hay contador de intentos fallidos, no hay lockout temporal, no hay CAPTCHA, no hay delay entre intentos. La unica proteccion disponible es la que pueda implementar el backend. El boton de submit se deshabilita mientras isLoading es true, pero esto no previene ataques automatizados via llamadas directas a la API.",
+      "recommendation": "Implementar rate limiting en el backend para el endpoint de login. En el cliente, agregar: (1) contador de intentos fallidos con lockout temporal (ej: bloquear 30s despues de 5 intentos), (2) incrementar el delay de feedback de error para no facilitar enumeracion de usuarios, (3) considerar CAPTCHA despues de N intentos fallidos.",
+      "cwe": "CWE-307",
+      "evidence": "login.ts:39 (onSubmit sin logica de rate limiting), login.ts:44 (sessionFacade.login sin contador de intentos)",
+      "stride": "Denial of Service, Spoofing"
+    },
+    {
+      "id": "SEC-018",
+      "title": "Uso de window.prompt() para input de URL en editor de correo",
+      "severity": "LOW",
+      "category": "OWASP-A05 - Security Misconfiguration",
+      "file": "src/app/features/atencionCliente/presentation/components/speech/components/infoOportunidad/infoOportunidad.ts",
+      "line": 1913,
+      "description": "Se usa window.prompt() para solicitar al usuario la URL de un enlace en el editor de correo. El uso de prompt() es una mala practica de UX y seguridad: (1) no permite validacion de la URL antes de aceptarla, (2) el dialogo nativo del navegador puede ser abusado para mostrar mensajes enganhosos, (3) en algunos contextos de seguridad estrictos, los dialogos nativos estan bloqueados.",
+      "recommendation": "Reemplazar window.prompt() con un componente de dialogo Angular que incluya validacion de URL (verificar que sea http/https, que el dominio este en una allowlist) antes de insertar el enlace.",
+      "cwe": "CWE-20",
+      "evidence": "infoOportunidad.ts:1913 (const url = prompt('URL del enlace:'))",
+      "stride": "Injection"
+    },
+    {
+      "id": "SEC-019",
+      "title": "Informacion de version expuesta en UI (Version V 0.0.7)",
+      "severity": "INFO",
+      "category": "OWASP-A05 - Security Misconfiguration",
+      "file": "src/app/features/auth/presentation/components/login/login.html",
+      "line": 24,
+      "description": "La pantalla de login muestra la version de la aplicacion (V 0.0.7) en texto visible. Aunque es informacion menor, exponer la version facilita a un atacante identificar versiones con vulnerabilidades conocidas.",
+      "recommendation": "Eliminar la version de la UI de produccion, o moverla a una area de admin accesible solo a usuarios autenticados.",
+      "cwe": "CWE-200",
+      "evidence": "login.html:24 (<span>Version V 0.0.7</span>)",
+      "stride": "Information Disclosure"
+    },
+    {
+      "id": "SEC-020",
+      "title": "validateToken() no verifica expiracion JWT",
+      "severity": "LOW",
+      "category": "OWASP-A07 - Auth Failures",
+      "file": "src/app/core/infraestructure/services/token.service.ts",
+      "line": 17,
+      "description": "validateToken solo verifica que el token no sea nulo, sin validar expiracion ni formato JWT",
+      "recommendation": "Decodificar payload JWT con atob y verificar exp claim"
+    },
+    {
+      "id": "SEC-021",
+      "title": "tracesSampleRate 1.0 en desarrollo",
+      "severity": "LOW",
+      "category": "OWASP-A09 - Logging Failures",
+      "file": "src/main.ts",
+      "line": 14,
+      "description": "Sentry captura 100% de transacciones en dev, potencialmente con datos reales de testing",
+      "recommendation": "Usar 0.0 o 0.01 en desarrollo"
+    },
+    {
+      "id": "SEC-022",
+      "title": "Log de URL SignalR con idPersonal en produccion",
+      "severity": "LOW",
+      "category": "OWASP-A09 - Logging Failures",
+      "file": "src/app/features/mensajeria/application/services/whatsapp-signalr.service.ts",
+      "line": 187,
+      "description": "console.log expone URL con idPersonal del usuario en todos los entornos",
+      "recommendation": "Condicionar log a entorno no-produccion"
+    }
+  ],
+  "threat_model": {
+    "componentes_analizados": [
+      "AuthInterceptor (JWT Bearer injection)",
+      "TokenService (localStorage storage)",
+      "SessionFacade (login/logout/session init)",
+      "SessionCleanupService (logout cleanup)",
+      "WhatsappSignalRService (real-time connection)",
+      "SentryUserService (error monitoring context)",
+      "AuthGuard / LoginGuard (route protection)",
+      "WavixSdkService (telephony integration)",
+      "Server.ts Express SSR",
+      "Personal Entity (telephony credentials)",
+      "AccesoAlumnoDto (student credentials)",
+      "Mermaid Diagram Component (innerHTML XSS surface)"
+    ],
+    "stride_summary": {
+      "Spoofing": [
+        "Token JWT en localStorage accesible via XSS (SEC-001)",
+        "Sin validacion de expiracion JWT cliente (SEC-012)",
+        "authGuard retorna true en SSR (SEC-016)",
+        "Sin rate limiting en login (SEC-017)"
+      ],
+      "Tampering": [
+        "Sin proteccion CSRF (SEC-010)",
+        "Credenciales de telefonia en frontend (SEC-003)"
+      ],
+      "Repudiation": [
+        "Logging insuficiente de acciones de seguridad - no hay auditoria de operaciones criticas en el frontend"
+      ],
+      "Information_Disclosure": [
+        "Datos de sesion sin cifrar en localStorage (SEC-002)",
+        "Credenciales 3CX/Asterisk en entidad de dominio (SEC-003)",
+        "Contrasena de alumno en DTO (SEC-004)",
+        "sendDefaultPii: true en Sentry (SEC-005)",
+        "Console.log con token Wavix (SEC-013)",
+        "URL SignalR con datos de usuario en query string (SEC-015)"
+      ],
+      "Denial_of_Service": [
+        "DSN Sentry en bundle publico permite envio de spam (SEC-006)",
+        "Sin rate limiting en login (SEC-017)"
+      ],
+      "Elevation_of_Privilege": [
+        "bypassSecurityTrustResourceUrl sin validacion de dominio (SEC-008)",
+        "Mermaid htmlLabels:true con contenido del backend (SEC-009)"
+      ]
+    }
+  },
+  "dependency_analysis": {
+    "nota": "Analisis basado en package.json. Se recomienda ejecutar 'npm audit' y 'npx audit-ci' para CVEs actuales.",
+    "dependencias_de_riesgo": [
+      {
+        "package": "@angular/platform-browser-dynamic",
+        "version": "^21.2.8",
+        "issue": "Version 21.x mientras el resto del proyecto usa Angular 20 (^20.x). Discrepancia de version que puede causar comportamientos inesperados y dificulta el analisis de seguridad de dependencias.",
+        "risk": "MEDIUM"
+      },
+      {
+        "package": "mermaid",
+        "version": "^11.12.2",
+        "issue": "Libreria de diagramas con historial de vulnerabilidades XSS. Usar con htmlLabels:true incrementa la superficie de ataque.",
+        "risk": "MEDIUM"
+      },
+      {
+        "package": "express",
+        "version": "^5.1.0",
+        "issue": "Express 5.x es release candidate. Verificar que no haya vulnerabilidades conocidas en la version especifica instalada.",
+        "risk": "LOW"
+      },
+      {
+        "package": "@sentry/angular",
+        "version": "^10.34.0",
+        "issue": "Version actual. Verificar CVEs recientes en el SDK de Sentry.",
+        "risk": "INFO"
+      }
+    ],
+    "accion_requerida": "Ejecutar: npm audit --audit-level=high y revisar el reporte completo."
+  },
+  "ssр_security_analysis": {
+    "render_mode": "RenderMode.Client para todas las rutas (app.routes.server.ts:6)",
+    "hallazgos": [
+      "Al usar RenderMode.Client, el SSR actua principalmente como un shell que carga el bundle del cliente. El riesgo de data leaks entre requests SSR es bajo en esta configuracion.",
+      "El servidor Express no configura Helmet ni headers de seguridad (SEC-011).",
+      "AuthGuard retorna true en SSR sin validacion (SEC-016), pero el impacto es mitigado por RenderMode.Client.",
+      "Los console.log en el servidor (server.ts:59) exponen el puerto en logs del servidor."
+    ]
+  },
+  "remediation_roadmap": {
+    "inmediato": [
+      "SEC-003: Eliminar password3Cx y contrasenaAsterisk de los DTOs del frontend",
+      "SEC-004: Coordinar con backend para no enviar contrasena del alumno en AccesoAlumnoDto",
+      "SEC-005: Cambiar sendDefaultPii a false en Sentry",
+      "SEC-013: Eliminar console.log con tokens en wavixSdk.service.ts"
+    ],
+    "sprint_siguiente": [
+      "SEC-001: Evaluar migracion de token a HttpOnly cookie",
+      "SEC-007: Agregar DOMPurify para sanitizar HTML de mensajes WhatsApp y correos",
+      "SEC-008: Agregar validacion de dominio antes de bypassSecurityTrustResourceUrl",
+      "SEC-011: Agregar Helmet.js al servidor Express SSR",
+      "SEC-009: Cambiar Mermaid a htmlLabels: false"
+    ],
+    "backlog": [
+      "SEC-002: Cifrar datos de sesion en localStorage",
+      "SEC-006: Usar DSNs diferentes por ambiente en Sentry",
+      "SEC-010: Confirmar implementacion CSRF en el backend",
+      "SEC-012: Implementar validacion de expiracion JWT en cliente",
+      "SEC-015: Evaluar autenticacion del Hub SignalR via token en lugar de query params",
+      "SEC-016: Mejorar AuthGuard en contexto SSR",
+      "SEC-017: Implementar rate limiting en formulario de login",
+      "SEC-014: Eliminar throwTestError() del componente Login",
+      "SEC-018: Reemplazar window.prompt() con dialogo Angular",
+      "SEC-019: Eliminar version de la UI de produccion"
+    ]
+  },
+  "notas_para_qa_lead": [
+    "Las vulnerabilidades SEC-003 y SEC-004 requieren coordinacion con el equipo de backend (.NET) antes de implementar cambios en el frontend.",
+    "La vulnerabilidad SEC-007 (multiple innerHTML) necesita pruebas de penetracion manuales con payloads XSS reales en el entorno de prepublicacion, especialmente en el modulo de mensajeria WhatsApp donde el contenido proviene de usuarios externos.",
+    "El hallazgo SEC-001 (JWT en localStorage) es una decision de arquitectura que requiere evaluacion del equipo. Migrar a HttpOnly cookies puede ser complejo con el SSR de Angular. Se recomienda al menos implementar token rotation y reducir el TTL del JWT.",
+    "Riesgo residual alto: mensajes de WhatsApp contienen HTML generado por el backend que se renderiza via [innerHTML]. La cadena completa de sanitizacion (backend -> API -> frontend) no fue analizada y requiere revision del codigo backend.",
+    "Se recomienda ejecutar OWASP ZAP Baseline contra el ambiente de prepublicacion como siguiente paso de validacion dinamica.",
+    "El DSN de Sentry embebido en el bundle JS es publico por diseno del SDK, pero la configuracion sendDefaultPii:true es un riesgo de privacidad que debe ser corregido antes de cualquier evaluacion de cumplimiento GDPR."
+  ],
+  "version": "2.0",
+  "data_source": "VERIFIED - qa-security-tester agent deep scan 2026-04-10"
+}

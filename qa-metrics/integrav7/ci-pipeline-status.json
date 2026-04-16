@@ -1,0 +1,59 @@
+{
+  "project": "IntegraV7Interfaz",
+  "timestamp": "2026-04-10T16:00:00Z",
+  "agent": "ci-pipeline",
+  "version": "1.0",
+  "summary": {
+    "pipeline_name": "Frontend CI Pipeline",
+    "status": "CONFIGURED",
+    "test_framework": "Jest 30 + jest-preset-angular 16",
+    "previous_framework": "Karma 6.4 + Jasmine 5.7",
+    "migration_status": "COMPLETED",
+    "jobs": 3,
+    "total_steps": 14
+  },
+  "pipeline_config": {
+    "trigger": { "push": ["main", "dev"], "pull_request": ["main", "dev"] },
+    "concurrency": true,
+    "jobs": [
+      {
+        "name": "Lint",
+        "runner": "ubuntu-latest",
+        "steps": ["checkout", "setup-node-22", "cache-node-modules", "install", "eslint"]
+      },
+      {
+        "name": "Test & Coverage",
+        "runner": "ubuntu-latest",
+        "depends_on": "Lint",
+        "steps": ["checkout", "setup-node-22", "cache-node-modules", "install", "jest-coverage", "enforce-threshold", "codecov-upload", "export-qa-metrics", "upload-artifacts"]
+      },
+      {
+        "name": "Production Build",
+        "runner": "ubuntu-latest",
+        "depends_on": "Test & Coverage",
+        "steps": ["checkout", "setup-node-22", "cache-node-modules", "install", "build-prod"]
+      }
+    ]
+  },
+  "migration_details": {
+    "from": "Karma 6.4 + Jasmine 5.7 + ChromeHeadless",
+    "to": "Jest 30 + jest-preset-angular 16 + jsdom",
+    "specs_migrated": 9,
+    "tests_migrated": 37,
+    "tests_passing": 37,
+    "breaking_changes_fixed": [
+      "jasmine.createSpyObj → jest.fn() objects",
+      ".and.returnValue() → .mockReturnValue()",
+      "toBeTrue()/toBeFalse() → toBe(true)/toBe(false)",
+      "jasmine.objectContaining() → expect.objectContaining()",
+      ".calls.mostRecent().args → .mock.calls[.mock.calls.length - 1]",
+      "setup-jest.ts: setupZonelessTestEnv() for Angular 20",
+      "moduleNameMapper for src/env/* non-alias imports"
+    ]
+  },
+  "thresholds": {
+    "ci_success_rate": { "green": 90, "yellow": 75, "red": 50 },
+    "build_time": { "green": 300, "yellow": 600, "red": 900, "unit": "seconds" },
+    "coverage": { "green": 70, "yellow": 50, "red": 20 }
+  }
+}

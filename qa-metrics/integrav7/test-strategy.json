@@ -1,0 +1,59 @@
+{
+  "project": "IntegraV7Interfaz",
+  "timestamp": "2026-04-13T09:50:00Z",
+  "agent": "qa-lead-master",
+  "version": "4.0",
+  "data_source": "VERIFIED - Jest --coverage 2026-04-13",
+  "summary": {
+    "total_testable_artifacts": 719,
+    "artifacts_with_tests": 330,
+    "tests_existing": 1467,
+    "test_suites": 330,
+    "tests_planned": 1500,
+    "test_quality_score": 8.5,
+    "risk_level": "MEDIUM",
+    "coverage_target_sprint8": 78
+  },
+  "inventory": {
+    "useCases": 234,
+    "facades": 40,
+    "adapters": 45,
+    "mappers": 68,
+    "states": 45,
+    "services": 19,
+    "guards_interceptors": 4,
+    "pipes": 2,
+    "utils": 3,
+    "entities": 110,
+    "components_pages": 149
+  },
+  "risk_items": {
+    "p0_critical": [
+      { "id": "P0-01", "artifact": "authGuard + loginGuard + authInterceptor", "feature": "core", "risk_score": 25, "status": "TESTED" },
+      { "id": "P0-02", "artifact": "token.service + localStorage.service", "feature": "core", "risk_score": 20, "status": "TESTED" },
+      { "id": "P0-03", "artifact": "session.facade + UserState", "feature": "core", "risk_score": 20, "status": "TESTED" },
+      { "id": "P0-04", "artifact": "atencionCliente 83 useCases", "feature": "atencionCliente", "risk_score": 25, "status": "PARTIAL" },
+      { "id": "P0-05", "artifact": "actividadesAtc.facade (1451 lines)", "feature": "actividad", "risk_score": 25, "status": "PENDING" },
+      { "id": "P0-06", "artifact": "atencionCliente 44 mappers", "feature": "atencionCliente", "risk_score": 20, "status": "PENDING" },
+      { "id": "P0-07", "artifact": "atencionCliente 33 states", "feature": "atencionCliente", "risk_score": 20, "status": "PENDING" }
+    ],
+    "p0_count": 251,
+    "p1_count": 148,
+    "p2_count": 235,
+    "p3_count": 85
+  },
+  "quality_gates": {
+    "line_coverage": { "current": 27.28, "threshold": 70, "status": "RED" },
+    "branch_coverage": { "current": 12.92, "threshold": 60, "status": "RED" },
+    "statement_coverage": { "current": 28.34, "threshold": 70, "status": "RED" },
+    "test_pass_rate": { "current": 100, "threshold": 98, "status": "GREEN" },
+    "build_success": { "current": 1, "threshold": 1, "status": "GREEN" },
+    "lint_errors": { "current": 0, "threshold": 0, "status": "GREEN" }
+  },
+  "phases": [
+    { "phase": 1, "name": "Foundation (P0)", "sprints": "1-2", "tests_target": 165, "coverage_target": 40 },
+    { "phase": 2, "name": "Growth (P1)", "sprints": "3-4", "tests_target": 170, "coverage_target": 55 },
+    { "phase": 3, "name": "Expansion (P2)", "sprints": "5-6", "tests_target": 124, "coverage_target": 70 },
+    { "phase": 4, "name": "Maturity (P2/P3+E2E)", "sprints": "7-8", "tests_target": 90, "coverage_target": 78 }
+  ]
+}
