@@ -47,15 +47,30 @@ ATC_LAYER_INVENTORY = {
         'label': 'Mappers',
         'desc': 'Conversion entre DTOs del backend y entidades del frontend',
     },
+    'entities': {
+        'total': 61, 'tested': 50,
+        'label': 'Entidades',
+        'desc': 'Clases de dominio del negocio',
+    },
+    'adapters': {
+        'total': 28, 'tested': 28,
+        'label': 'Adaptadores',
+        'desc': 'Implementacion HTTP de los puertos (consumen la API)',
+    },
+    'components': {
+        'total': 53, 'tested': 53,
+        'label': 'Componentes UI',
+        'desc': 'Componentes visuales de Angular',
+    },
+    'pages': {
+        'total': 3, 'tested': 3,
+        'label': 'Paginas',
+        'desc': 'Paginas principales del modulo (home, detail)',
+    },
     'services_pres': {
         'total': 1, 'tested': 1,
         'label': 'Servicios de presentacion',
         'desc': 'Servicios transversales del modulo',
-    },
-    'entities': {
-        'total': 61, 'tested': 0,
-        'label': 'Entidades',
-        'desc': 'Clases de dominio del negocio',
     },
     'dtos': {
         'total': 68, 'tested': 0,
@@ -66,21 +81,6 @@ ATC_LAYER_INVENTORY = {
         'total': 29, 'tested': 0,
         'label': 'Puertos',
         'desc': 'Interfaces abstractas de la arquitectura hexagonal',
-    },
-    'adapters': {
-        'total': 28, 'tested': 0,
-        'label': 'Adaptadores',
-        'desc': 'Implementacion HTTP de los puertos (consumen la API)',
-    },
-    'components': {
-        'total': 53, 'tested': 0,
-        'label': 'Componentes UI',
-        'desc': 'Componentes visuales de Angular',
-    },
-    'pages': {
-        'total': 3, 'tested': 0,
-        'label': 'Paginas',
-        'desc': 'Paginas principales del modulo (home, detail)',
     },
     'services_app': {
         'total': 1, 'tested': 0,
@@ -95,12 +95,12 @@ ATC_LAYER_INVENTORY = {
 }
 
 ATC_FEATURE_KEY = 'atencionCliente'
-ATC_COVERAGE_LINES = 28.82
-ATC_COVERAGE_STATEMENTS = 29.47
-ATC_COVERAGE_BRANCHES = 13.75
-ATC_COVERAGE_FUNCTIONS = 16.76
+ATC_COVERAGE_LINES = 45.79
+ATC_COVERAGE_STATEMENTS = 45.84
+ATC_COVERAGE_BRANCHES = 18.78
+ATC_COVERAGE_FUNCTIONS = 34.90
 ATC_TOTAL_LINES = 13677
-ATC_COVERED_LINES = 3943
+ATC_COVERED_LINES = 6263
 
 
 @api_view(['GET'])
