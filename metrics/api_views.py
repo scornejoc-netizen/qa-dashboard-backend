@@ -28,7 +28,7 @@ def project_list(request):
 # Source: find src/app/features/atencionCliente -path "*/<layer>/*.ts" ! -name "*.spec.ts"
 ATC_LAYER_INVENTORY = {
     'useCases': {
-        'total': 83, 'tested': 82,
+        'total': 83, 'tested': 83,
         'label': 'Casos de uso',
         'desc': 'Logica de negocio pura (buscar, crear, cerrar actividades)',
     },
@@ -48,7 +48,7 @@ ATC_LAYER_INVENTORY = {
         'desc': 'Conversion entre DTOs del backend y entidades del frontend',
     },
     'entities': {
-        'total': 61, 'tested': 50,
+        'total': 61, 'tested': 60,
         'label': 'Entidades',
         'desc': 'Clases de dominio del negocio',
     },
@@ -58,7 +58,7 @@ ATC_LAYER_INVENTORY = {
         'desc': 'Implementacion HTTP de los puertos (consumen la API)',
     },
     'components': {
-        'total': 53, 'tested': 53,
+        'total': 53, 'tested': 52,
         'label': 'Componentes UI',
         'desc': 'Componentes visuales de Angular',
     },
@@ -73,34 +73,34 @@ ATC_LAYER_INVENTORY = {
         'desc': 'Servicios transversales del modulo',
     },
     'dtos': {
-        'total': 68, 'tested': 0,
+        'total': 68, 'tested': 68,
         'label': 'DTOs',
         'desc': 'Contratos de datos con el backend (interfaces)',
     },
     'ports': {
-        'total': 29, 'tested': 0,
+        'total': 29, 'tested': 29,
         'label': 'Puertos',
         'desc': 'Interfaces abstractas de la arquitectura hexagonal',
     },
     'services_app': {
-        'total': 1, 'tested': 0,
+        'total': 1, 'tested': 1,
         'label': 'Servicios de aplicacion',
         'desc': 'Servicios SignalR de tiempo real',
     },
     'enums': {
-        'total': 2, 'tested': 0,
+        'total': 2, 'tested': 2,
         'label': 'Enumeraciones',
         'desc': 'Valores constantes del dominio',
     },
 }
 
 ATC_FEATURE_KEY = 'atencionCliente'
-ATC_COVERAGE_LINES = 45.79
-ATC_COVERAGE_STATEMENTS = 45.84
-ATC_COVERAGE_BRANCHES = 18.78
-ATC_COVERAGE_FUNCTIONS = 34.90
+ATC_COVERAGE_LINES = 46.12
+ATC_COVERAGE_STATEMENTS = 46.16
+ATC_COVERAGE_BRANCHES = 19.08
+ATC_COVERAGE_FUNCTIONS = 35.09
 ATC_TOTAL_LINES = 13677
-ATC_COVERED_LINES = 6263
+ATC_COVERED_LINES = 6309
 
 
 @api_view(['GET'])
