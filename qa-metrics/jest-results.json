@@ -1,36 +1,36 @@
 {
   "project": "IntegraV7Interfaz",
-  "timestamp": "2026-04-16T09:30:00Z",
+  "timestamp": "2026-05-07T08:30:00Z",
   "agent": "jest-runner",
-  "version": "4.0",
-  "data_source": "VERIFIED - npx jest --coverage --no-cache 2026-04-16",
+  "version": "5.0",
+  "data_source": "VERIFIED - npx jest --coverage 2026-05-07",
   "summary": {
-    "coverage_pct": 31.5,
-    "total_tests": 1820,
-    "passed": 1820,
+    "coverage_pct": 43.09,
+    "total_tests": 2679,
+    "passed": 2679,
     "failed": 0,
-    "test_suites": 444,
-    "duration_ms": 83232
+    "test_suites": 727,
+    "duration_ms": 73051
   },
   "coverage_real": {
     "statements": {
-      "pct": 32.33,
-      "covered": 9682,
+      "pct": 43.48,
+      "covered": 13022,
       "total": 29943
     },
     "branches": {
-      "pct": 15.5,
-      "covered": 1774,
+      "pct": 20.92,
+      "covered": 2394,
       "total": 11442
     },
     "functions": {
-      "pct": 17.71,
-      "covered": 1451,
+      "pct": 30.11,
+      "covered": 2467,
       "total": 8193
     },
     "lines": {
-      "pct": 31.5,
-      "covered": 8651,
+      "pct": 43.09,
+      "covered": 11834,
       "total": 27461
     }
   },
@@ -57,13 +57,13 @@
     },
     "shared": {
       "total": 109,
-      "tested": 61,
-      "coverage_pct": 56.0
+      "tested": 64,
+      "coverage_pct": 58.7
     },
     "planificacion": {
       "total": 134,
-      "tested": 56,
-      "coverage_pct": 41.8
+      "tested": 63,
+      "coverage_pct": 47.0
     },
     "mensajeria": {
       "total": 28,
@@ -72,8 +72,8 @@
     },
     "catalogo": {
       "total": 26,
-      "tested": 6,
-      "coverage_pct": 23.1
+      "tested": 17,
+      "coverage_pct": 65.4
     },
     "alumno": {
       "total": 22,
