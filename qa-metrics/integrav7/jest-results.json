@@ -2,7 +2,7 @@
   "project": "IntegraV7Interfaz",
   "timestamp": "2026-05-07T08:30:00Z",
   "agent": "jest-runner",
-  "version": "5.0",
+  "version": "5.1",
   "data_source": "VERIFIED - npx jest --coverage 2026-05-07",
   "summary": {
     "coverage_pct": 43.09,
@@ -37,8 +37,8 @@
   "artifacts_by_feature": {
     "atencionCliente": {
       "total": 432,
-      "tested": 186,
-      "coverage_pct": 43.1
+      "tested": 382,
+      "coverage_pct": 88.4
     },
     "auth": {
       "total": 4,
@@ -62,8 +62,8 @@
     },
     "planificacion": {
       "total": 134,
-      "tested": 63,
-      "coverage_pct": 47.0
+      "tested": 87,
+      "coverage_pct": 64.9
     },
     "mensajeria": {
       "total": 28,
@@ -103,25 +103,18 @@
   },
   "test_suites_detail": [
     {
-      "name": "semaforoFinanciero.facade.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "actividadPlanificacion.mapper.spec.ts",
+      "tests": 16,
+      "passed": 16,
       "failed": 0,
-      "feature": "atencionCliente"
+      "feature": "planificacion"
     },
     {
-      "name": "comentarioActividad.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "actividadPlanificacion.entity.spec.ts",
+      "tests": 15,
+      "passed": 15,
       "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "beneficiosInversion.facade.spec.ts",
-      "tests": 7,
-      "passed": 7,
-      "failed": 0,
-      "feature": "atencionCliente"
+      "feature": "planificacion"
     },
     {
       "name": "solicitudAlumno.facade.spec.ts",
@@ -138,6 +131,41 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "agenda.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "semaforoFinanciero.facade.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "docente.entity.spec.ts",
+      "tests": 11,
+      "passed": 11,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "beneficiosInversion.facade.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "agenda.mapper.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "cronogramaPago.mapper.spec.ts",
       "tests": 6,
       "passed": 6,
@@ -152,6 +180,34 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "actividadesAtc.facade.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "oportunidad.facade.spec.ts",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "comentarioActividad.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cronogramaPago.facade.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "personal.entity.spec.ts",
       "tests": 12,
       "passed": 12,
@@ -159,7 +215,7 @@
       "feature": "personal"
     },
     {
-      "name": "resumenAcademico.facade.spec.ts",
+      "name": "generarPlantillaWhatsapp.facade.spec.ts",
       "tests": 5,
       "passed": 5,
       "failed": 0,
@@ -173,25 +229,25 @@
       "feature": "planificacion"
     },
     {
-      "name": "cronogramaPago.facade.spec.ts",
+      "name": "resumenAcademico.facade.spec.ts",
       "tests": 5,
       "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
     },
     {
-      "name": "generarPlantillaWhatsapp.facade.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "envioCondicionesCaracteristicas.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
     {
-      "name": "actividadesAtc.facade.spec.ts",
-      "tests": 6,
-      "passed": 6,
+      "name": "enviarAccesosPortal.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "createOportunidad.usecase.spec.ts",
@@ -201,11 +257,32 @@
       "feature": "planificacion"
     },
     {
-      "name": "envioCondicionesCaracteristicas.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "cronogramaPago.adapter.spec.ts",
+      "tests": 10,
+      "passed": 10,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "actividadesAtc.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "portalAcademico.adapter.spec.ts",
+      "tests": 12,
+      "passed": 12,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "session-cleanup.service.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "core"
     },
     {
       "name": "actividadesAtc.state.spec.ts",
@@ -220,13 +297,6 @@
       "passed": 18,
       "failed": 0,
       "feature": "planificacion"
-    },
-    {
-      "name": "enviarAccesosPortal.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
-      "failed": 0,
-      "feature": "atencionCliente"
     },
     {
       "name": "actividad.entity.spec.ts",
@@ -250,11 +320,11 @@
       "feature": "comercial"
     },
     {
-      "name": "actividadesAtc.adapter.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "chatPortalWeb.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "historialInteracciones.facade.spec.ts",
@@ -264,6 +334,13 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "session.facade.spec.ts",
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "feature": "core"
+    },
+    {
       "name": "solicitudCertificadoFisico.facade.spec.ts",
       "tests": 5,
       "passed": 5,
@@ -271,23 +348,16 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "chatPortalWeb.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "wavix.state.spec.ts",
-      "tests": 14,
-      "passed": 14,
-      "failed": 0,
-      "feature": "core"
-    },
-    {
       "name": "subscribeWhatsappNotifications.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "flujo.entity.spec.ts",
+      "tests": 9,
+      "passed": 9,
       "failed": 0,
       "feature": "planificacion"
     },
@@ -299,11 +369,46 @@
       "feature": "core"
     },
     {
+      "name": "solicitudAlumno.adapter.spec.ts",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "wavix.state.spec.ts",
+      "tests": 14,
+      "passed": 14,
+      "failed": 0,
+      "feature": "core"
+    },
+    {
+      "name": "flujo.mapper.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "solicitudOperaciones.mapper.spec.ts",
       "tests": 6,
       "passed": 6,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "cronogramaPorMatricula.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "atencionCliente.facade.spec.ts",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "enviarCorreoGmailPlanificacion.usecase.spec.ts",
@@ -313,13 +418,6 @@
       "feature": "planificacion"
     },
     {
-      "name": "actividad.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "actividad"
-    },
-    {
       "name": "empresa.mapper.spec.ts",
       "tests": 5,
       "passed": 5,
@@ -327,11 +425,18 @@
       "feature": "empresa"
     },
     {
-      "name": "personal.mapper.spec.ts",
+      "name": "actividad.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "chatPortalWeb-signalr.service.spec.ts",
       "tests": 6,
       "passed": 6,
       "failed": 0,
-      "feature": "personal"
+      "feature": "atencionCliente"
     },
     {
       "name": "cursosMatriculados.facade.spec.ts",
@@ -341,18 +446,32 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "session-cleanup.service.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "personal.mapper.spec.ts",
+      "tests": 6,
+      "passed": 6,
       "failed": 0,
-      "feature": "core"
+      "feature": "personal"
     },
     {
-      "name": "comunicacionPreferencia.mapper.spec.ts",
+      "name": "actividad.entity.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "informacionProgramaV2.dto.spec.ts",
       "tests": 5,
       "passed": 5,
       "failed": 0,
-      "feature": "comunicacionPreferencia"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "login.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "auth"
     },
     {
       "name": "modal.component.spec.ts",
@@ -362,11 +481,11 @@
       "feature": "shared"
     },
     {
-      "name": "alumno.entity.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "informacionProgramaV2.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
       "failed": 0,
-      "feature": "alumno"
+      "feature": "atencionCliente"
     },
     {
       "name": "http.service.spec.ts",
@@ -376,46 +495,46 @@
       "feature": "core"
     },
     {
+      "name": "cronograma-cuota.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "beneficiosInversion.adapter.spec.ts",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "actividadPlanificacion.adapter.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "comunicacionPreferencia.mapper.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "comunicacionPreferencia"
+    },
+    {
+      "name": "alumno.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
       "name": "getCatalogos.usecase.spec.ts",
       "tests": 6,
       "passed": 6,
       "failed": 0,
       "feature": "planificacion"
-    },
-    {
-      "name": "mask.util.spec.ts",
-      "tests": 17,
-      "passed": 17,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "session.facade.spec.ts",
-      "tests": 15,
-      "passed": 15,
-      "failed": 0,
-      "feature": "core"
-    },
-    {
-      "name": "correo.entity.spec.ts",
-      "tests": 7,
-      "passed": 7,
-      "failed": 0,
-      "feature": "comercial"
-    },
-    {
-      "name": "empresa.entity.spec.ts",
-      "tests": 7,
-      "passed": 7,
-      "failed": 0,
-      "feature": "empresa"
-    },
-    {
-      "name": "select-planificacion.component.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "shared"
     },
     {
       "name": "auth.adapter.spec.ts",
@@ -425,11 +544,25 @@
       "feature": "auth"
     },
     {
-      "name": "login.useCase.spec.ts",
+      "name": "mask.util.spec.ts",
+      "tests": 17,
+      "passed": 17,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "select-planificacion.component.spec.ts",
       "tests": 6,
       "passed": 6,
       "failed": 0,
-      "feature": "auth"
+      "feature": "shared"
+    },
+    {
+      "name": "empresa.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "empresa"
     },
     {
       "name": "auth-guard.spec.ts",
@@ -439,11 +572,88 @@
       "feature": "core"
     },
     {
+      "name": "beneficio-solicitado.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "correo.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "comercial"
+    },
+    {
+      "name": "solicitudAlumnoFiltrada.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "login.useCase.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "auth"
+    },
+    {
+      "name": "informacionPrograma.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "actividadPlanificacion.facade.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "whatsapp.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "resumenAcademico.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "solicitudAlumnoFiltrada.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "whatsapp-message-parser.util.spec.ts",
       "tests": 12,
       "passed": 12,
       "failed": 0,
       "feature": "shared"
+    },
+    {
+      "name": "informacionPrograma.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "flujo.facade.spec.ts",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "localStorage.service.spec.ts",
@@ -453,11 +663,11 @@
       "feature": "core"
     },
     {
-      "name": "informacionPrograma.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "editarActividad.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "atencionCliente"
+      "feature": "planificacion"
     },
     {
       "name": "informacionProgramaPoridPgeneral.facade.spec.ts",
@@ -474,18 +684,18 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "informacionCliente.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "createOcurrencia.usecase.spec.ts",
       "tests": 7,
       "passed": 7,
       "failed": 0,
       "feature": "planificacion"
-    },
-    {
-      "name": "WhatsappMensaje.usecase.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
     },
     {
       "name": "previewMensajePla.usecase.spec.ts",
@@ -495,6 +705,41 @@
       "feature": "planificacion"
     },
     {
+      "name": "custom-select.component.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "WhatsappMensaje.usecase.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "curso.dto.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "modal-select-template.component.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "perfilCliente.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "registrarRecuperacionSesiones.usecase.spec.ts",
       "tests": 6,
       "passed": 6,
@@ -502,9 +747,16 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "semaforoFinancieroOportunidad.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "wavix-softphone.component.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "programaPorpais.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -516,9 +768,23 @@
       "feature": "alumno"
     },
     {
-      "name": "programaPorpais.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "pagination-controls.component.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "enviarAccesosPortal.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "semaforoFinancieroOportunidad.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -530,6 +796,13 @@
       "feature": "actividad"
     },
     {
+      "name": "portalAcademicoSincronico.adapter.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "informacionEmpresa.facade.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -537,7 +810,7 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "wavix-softphone.component.spec.ts",
+      "name": "activity-carousel.component.spec.ts",
       "tests": 5,
       "passed": 5,
       "failed": 0,
@@ -558,6 +831,20 @@
       "feature": "shared"
     },
     {
+      "name": "enviarCondicionesCaracteristicas.dto.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "inversion.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "ejecutarActividadManualmente.usecase.spec.ts",
       "tests": 5,
       "passed": 5,
@@ -565,11 +852,11 @@
       "feature": "planificacion"
     },
     {
-      "name": "resolverActividad.usecase.spec.ts",
-      "tests": 6,
-      "passed": 6,
+      "name": "modalRecuperacion.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
     },
     {
       "name": "button.component.spec.ts",
@@ -579,9 +866,37 @@
       "feature": "shared"
     },
     {
+      "name": "cronogramaDetalleCuotasTransaccionAuditoria.entity.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "historialMensajes.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "resolverActividad.usecase.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "registrarRecuperacionCurso.usecase.spec.ts",
       "tests": 5,
       "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "modal-accesos-temporales.component.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -593,11 +908,18 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "ficha-request-lifecycle.service.spec.ts",
-      "tests": 8,
-      "passed": 8,
+      "name": "encuestaAlumnoMatriculado.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "agenda.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "mensajeria.mapper.spec.ts",
@@ -607,11 +929,18 @@
       "feature": "mensajeria"
     },
     {
-      "name": "login.spec.ts",
-      "tests": 7,
-      "passed": 7,
+      "name": "ficha-request-lifecycle.service.spec.ts",
+      "tests": 8,
+      "passed": 8,
       "failed": 0,
-      "feature": "auth"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sentinelFinanciero.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "obtener-correos-enviados.usecase.spec.ts",
@@ -621,23 +950,30 @@
       "feature": "mensajeria"
     },
     {
-      "name": "marcarOcurrencia.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
-      "name": "atencionCliente.facade.spec.ts",
-      "tests": 10,
-      "passed": 10,
+      "name": "informacionPrograma.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
     {
-      "name": "getInformacionProgramaPorIdPgeneral.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "crearActividad.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "editarFlujo.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "semaforoFinanciero.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -649,9 +985,37 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "beneficio-matricula.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "marcarOcurrencia.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "portalAcademicoAsincronico.adapter.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "documentoPrograma.facade.spec.ts",
       "tests": 4,
       "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getInformacionProgramaPorIdPgeneral.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -677,9 +1041,9 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerInformacionProgramaFiltro.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "solicitudAlumnoAgrupada.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -687,6 +1051,13 @@
       "name": "informacionPrograma.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerInformacionProgramaFiltro.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -705,9 +1076,58 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "metricasATC.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "MensajeWhatsapp.adapter.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "getInformacionProgramaFiltro.usecase.spec.ts",
       "tests": 5,
       "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "metric-card.component.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "semaforoFinanciero.adapter.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "encuesta.dto.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "gestionPagos.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "historialInteraccionOportunidad.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -719,11 +1139,18 @@
       "feature": "planificacion"
     },
     {
-      "name": "gestionPagos.facade.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "oportunidadCronograma.entity.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "libreriaActividades.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "obtenerCriteriosSincronico.usecase.spec.ts",
@@ -747,6 +1174,13 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "oportunidad.adapter.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "oportunidad.state.spec.ts",
       "tests": 10,
       "passed": 10,
@@ -754,18 +1188,18 @@
       "feature": "planificacion"
     },
     {
-      "name": "obtenerSesionesAsociadasPEspecifico.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "obtenerActividadesPorAsesor.usecase.spec.ts",
       "tests": 5,
       "passed": 5,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "obtenerSesionesAsociadasPEspecifico.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "preferenciaComunicacion.entity.spec.ts",
@@ -782,11 +1216,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "solicitudAgrupada.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "solicitudCambios.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "comentarioActividad.state.spec.ts",
@@ -796,7 +1230,35 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "solicitudAgrupada.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
       "name": "registroPortalWeb.facade.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "accordion.component.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "historialInteraccionOportunidad.dto.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getInformacionProgramaV2.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
@@ -810,16 +1272,23 @@
       "feature": "actividad"
     },
     {
-      "name": "accordion.component.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
       "name": "portalAcademico.state.spec.ts",
       "tests": 8,
       "passed": 8,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "chatPortalWeb.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "MensajeWhatsapp.dto.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -845,6 +1314,20 @@
       "feature": "planificacion"
     },
     {
+      "name": "chatPortalWeb.adapter.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoPrograma.dto.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "token.service.spec.ts",
       "tests": 9,
       "passed": 9,
@@ -852,9 +1335,23 @@
       "feature": "core"
     },
     {
+      "name": "solicitudCertificadoFisico.adapter.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "generarPlantillaDocente.usecase.spec.ts",
       "tests": 5,
       "passed": 5,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "creacionOportunidades.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
       "feature": "planificacion"
     },
@@ -866,9 +1363,9 @@
       "feature": "planificacion"
     },
     {
-      "name": "solicitudAlumno.state.spec.ts",
-      "tests": 7,
-      "passed": 7,
+      "name": "certificacionesAdministrativo.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -883,6 +1380,13 @@
       "name": "atencionCliente.state.spec.ts",
       "tests": 8,
       "passed": 8,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "solicitudAlumno.state.spec.ts",
+      "tests": 7,
+      "passed": 7,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -908,6 +1412,20 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "tab-config.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "portalAcademico.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "beneficiosInversion.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -915,9 +1433,9 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "actualizarSentinelAlumno.usecase.spec.ts",
-      "tests": 6,
-      "passed": 6,
+      "name": "criterio.mapper.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -929,9 +1447,9 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "criterio.mapper.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "actualizarSentinelAlumno.usecase.spec.ts",
+      "tests": 6,
+      "passed": 6,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -950,13 +1468,6 @@
       "feature": "actividad"
     },
     {
-      "name": "comunicacionPreferencia.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "custom-modal.service.spec.ts",
       "tests": 8,
       "passed": 8,
@@ -964,9 +1475,9 @@
       "feature": "shared"
     },
     {
-      "name": "chatPortalWeb.state.spec.ts",
-      "tests": 8,
-      "passed": 8,
+      "name": "comunicacionPreferencia.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -978,11 +1489,39 @@
       "feature": "shared"
     },
     {
-      "name": "user.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
+      "name": "chatPortalWeb.state.spec.ts",
+      "tests": 8,
+      "passed": 8,
       "failed": 0,
-      "feature": "core"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoPrograma.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "home.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "infoOportunidad.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "crearFlujo.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "dropdown.component.spec.ts",
@@ -990,6 +1529,13 @@
       "passed": 6,
       "failed": 0,
       "feature": "shared"
+    },
+    {
+      "name": "modalExoneracionMora.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "actualizarPreferenciaAlumno.useCase.spec.ts",
@@ -1006,6 +1552,13 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "user.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "core"
+    },
+    {
       "name": "guardarComentarioEncuesta.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -1013,9 +1566,16 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "getDocumentoPrograma.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "solicitudReclamos.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "speech.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1027,13 +1587,6 @@
       "feature": "actividad"
     },
     {
-      "name": "finalizarYProgramarActividad.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "actividad"
-    },
-    {
       "name": "clasificacionTabBusqueda.adapter.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1041,11 +1594,18 @@
       "feature": "actividad"
     },
     {
-      "name": "asistencia.mapper.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "getDocumentoPrograma.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "finalizarYProgramarActividad.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
     },
     {
       "name": "mensajeria.state.spec.ts",
@@ -1055,11 +1615,25 @@
       "feature": "mensajeria"
     },
     {
+      "name": "cronogramaDetalleCompromiso.entity.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "actualizarEmpresa.useCase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "empresa"
+    },
+    {
+      "name": "enviarAccesosPortal.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "sidebar-menu-button.component.spec.ts",
@@ -1069,9 +1643,16 @@
       "feature": "shared"
     },
     {
-      "name": "enviarAccesosPortal.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "portalAcademico.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "asistencia.mapper.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1083,13 +1664,6 @@
       "feature": "shared"
     },
     {
-      "name": "card-radio-button.component.spec.ts",
-      "tests": 4,
-      "passed": 4,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
       "name": "obtenerEncuestaAlumnoMatriculado.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -1097,9 +1671,9 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerProgramaPorPais.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "semaforoFinancieroOportunidad.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1109,6 +1683,20 @@
       "passed": 5,
       "failed": 0,
       "feature": "planificacion"
+    },
+    {
+      "name": "obtenerProgramaPorPais.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "card-radio-button.component.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "shared"
     },
     {
       "name": "sidebar.service.spec.ts",
@@ -1125,6 +1713,13 @@
       "feature": "comercial"
     },
     {
+      "name": "obtenerMetricasATC.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "obtenerInformacionEmpresaPorMatricula.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1139,30 +1734,9 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerMetricasATC.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "plantilla.mapper.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "actividad"
-    },
-    {
       "name": "solicitudCertificadoFisico.state.spec.ts",
       "tests": 7,
       "passed": 7,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "obtenerCursosSincronicos.usecase.spec.ts",
-      "tests": 4,
-      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1174,11 +1748,46 @@
       "feature": "mensajeria"
     },
     {
+      "name": "plantilla.mapper.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "panel-conversaciones.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "criterio.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerCursosSincronicos.usecase.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "obtenerCursosAsincronicos.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "modal-busqueda-wrapper.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "shared"
     },
     {
       "name": "getActividadesFlujoPorCategoria.usecase.spec.ts",
@@ -1188,14 +1797,28 @@
       "feature": "planificacion"
     },
     {
-      "name": "enviarCondicionesCaracteristicas.usecase.spec.ts",
+      "name": "obtenerEncuestasMatricula.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerEncuestasMatricula.usecase.spec.ts",
+      "name": "informacionPrograma.dto.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cursosMatriculados.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "enviarCondicionesCaracteristicas.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
@@ -1209,9 +1832,9 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "finalizarActividadWhatsapp.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "informacionBeneficioSolicitado.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1230,11 +1853,11 @@
       "feature": "actividad"
     },
     {
-      "name": "insertarEmpresa.useCase.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "finalizarActividadWhatsapp.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
-      "feature": "empresa"
+      "feature": "atencionCliente"
     },
     {
       "name": "updateFlujo.usecase.spec.ts",
@@ -1244,18 +1867,18 @@
       "feature": "planificacion"
     },
     {
+      "name": "insertarEmpresa.useCase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "empresa"
+    },
+    {
       "name": "loading-button.component.spec.ts",
       "tests": 5,
       "passed": 5,
       "failed": 0,
       "feature": "shared"
-    },
-    {
-      "name": "sentry-user.service.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "core"
     },
     {
       "name": "obtenerCursosPrograma.usecase.spec.ts",
@@ -1265,9 +1888,30 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "sentry-user.service.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "core"
+    },
+    {
       "name": "gestionPagos.state.spec.ts",
       "tests": 7,
       "passed": 7,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "libreriaFlujos.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "arbol-ocurrencias.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1279,6 +1923,27 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "metricasATC.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "solicitudCombos.dto.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "semaforoFinanciero.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "getCambiosPendientes.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -1286,23 +1951,16 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "VerificarInsertarNumeroValidado.usecase.spec.ts",
-      "tests": 4,
-      "passed": 4,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "metricasATC.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "obtenerInformacionPrograma.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "VerificarInsertarNumeroValidado.usecase.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1328,6 +1986,20 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "beneficiosInversion.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "metricasATC.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "plantillaOperacionesEnvio.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -1342,6 +2014,13 @@
       "feature": "planificacion"
     },
     {
+      "name": "historialInteraccionOportunidad.adapter.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "obtenerAvanceAonlineHoras.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -1349,9 +2028,30 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "flujo.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "obtenerCursosFecha.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "identificadoresMatriculaCombo.entity.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cronogramaPagos.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1363,13 +2063,6 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerPersonal.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "personal"
-    },
-    {
       "name": "empresa.state.spec.ts",
       "tests": 5,
       "passed": 5,
@@ -1377,11 +2070,11 @@
       "feature": "empresa"
     },
     {
-      "name": "flujo.facade.spec.ts",
-      "tests": 10,
-      "passed": 10,
+      "name": "obtenerPersonal.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "personal"
     },
     {
       "name": "deleteOcurrencia.usecase.spec.ts",
@@ -1398,16 +2091,30 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "actividadPlanificacion.state.spec.ts",
-      "tests": 8,
-      "passed": 8,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
       "name": "cronogramaPago.state.spec.ts",
       "tests": 6,
       "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "comentarioActividad.adapter.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "matriculaCabeceraDatosCertificado.adapter.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "compromiso-pago.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1419,16 +2126,16 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "actividadPlanificacion.state.spec.ts",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "obtenerBeneficiosSolicitados.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "desmatricularCurso.usecase.spec.ts",
-      "tests": 5,
-      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1454,18 +2161,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "guardarSolicitudExoneracionMora.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "desmatricularCurso.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "atencionCliente"
-    },
-    {
-      "name": "rechazarSolicitudOperaciones.usecase.spec.ts",
-      "tests": 4,
-      "passed": 4,
-      "failed": 0,
-      "feature": "actividad"
     },
     {
       "name": "getActividadesDocente.usecase.spec.ts",
@@ -1473,6 +2173,13 @@
       "passed": 4,
       "failed": 0,
       "feature": "planificacion"
+    },
+    {
+      "name": "rechazarSolicitudOperaciones.usecase.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "actividad"
     },
     {
       "name": "documentoLegal.mapper.spec.ts",
@@ -1489,7 +2196,35 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "guardarSolicitudExoneracionMora.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "actualizarMetodoPago.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacionProgramaPorIdPgeneral.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "buscarClasificacionTab.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "datosEnvioAlumno.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -1503,18 +2238,18 @@
       "feature": "actividad"
     },
     {
-      "name": "buscarClasificacionTab.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "actividad"
-    },
-    {
       "name": "GenerarPlantillaWhatsapp.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "createActividad.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "executeActivity.usecase.spec.ts",
@@ -1531,21 +2266,14 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "createActividad.usecase.spec.ts",
+      "name": "solicitudCertificadoFisico.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
     },
     {
-      "name": "pagination-controls.component.spec.ts",
-      "tests": 9,
-      "passed": 9,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "getSolicitudesAlumno.usecase.spec.ts",
+      "name": "transaccion-pago.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -1559,11 +2287,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtener-plantillas-whatsapp.usecase.spec.ts",
+      "name": "getSolicitudesAlumno.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "mensajeria"
+      "feature": "atencionCliente"
     },
     {
       "name": "getColorHistorialCrediticio.usecase.spec.ts",
@@ -1580,13 +2308,6 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "getDocumentoLegal.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "custom-accordion.component.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -1594,9 +2315,72 @@
       "feature": "shared"
     },
     {
+      "name": "getDocumentoLegal.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtener-plantillas-whatsapp.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "envioCondicionesCaracteristicas.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "getSentinelFinanciero.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentacion.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacionPrograma.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "oportunidad.entity.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "avanceAonline.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "progresoAsincronico.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerBeneficiosPorMatricula.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1615,20 +2399,6 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerBeneficiosPorMatricula.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "informacionProgramaFiltro.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "getMatriculaCertificado.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1643,7 +2413,14 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "encuestaAlumnoMatriculado.mapper.spec.ts",
+      "name": "informacionProgramaFiltro.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "tarifario.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -1657,18 +2434,32 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "encuestaAlumnoMatriculado.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoPrograma.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "semaforoFinancieroOportunidad.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "actualizarDatosAlumno.useCase.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
       "feature": "alumno"
-    },
-    {
-      "name": "custom-modal.component.spec.ts",
-      "tests": 4,
-      "passed": 4,
-      "failed": 0,
-      "feature": "shared"
     },
     {
       "name": "solicitudOperaciones.entity.spec.ts",
@@ -1678,13 +2469,6 @@
       "feature": "actividad"
     },
     {
-      "name": "informacionProgramaFiltro.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "getCategoriasComentarioActividad.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1692,11 +2476,18 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "getDisparadorFlujoTiposConfig.usecase.spec.ts",
+      "name": "informacionProgramaFiltro.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sentinelFinanciero.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "insertarSolicitudOperaciones.usecase.spec.ts",
@@ -1706,11 +2497,18 @@
       "feature": "actividad"
     },
     {
-      "name": "dateFormat.pipe.spec.ts",
-      "tests": 6,
-      "passed": 6,
+      "name": "getDisparadorFlujoTiposConfig.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "shared"
+      "feature": "planificacion"
+    },
+    {
+      "name": "documentoLegal.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "obtenerSubEstadosMatricula.usecase.spec.ts",
@@ -1720,11 +2518,11 @@
       "feature": "actividad"
     },
     {
-      "name": "getPlantillasMedioComunicacion.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "historialInteracciones.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
     },
     {
       "name": "createDocentePostulante.usecase.spec.ts",
@@ -1732,6 +2530,27 @@
       "passed": 3,
       "failed": 0,
       "feature": "planificacion"
+    },
+    {
+      "name": "progresoAsincronico.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "custom-modal.component.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "login-guard.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "core"
     },
     {
       "name": "getOportunidades.usecase.spec.ts",
@@ -1748,18 +2567,18 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "getPlantillasMedioComunicacion.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "obtenerOpcionesPreferencia.useCase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "comunicacionPreferencia"
-    },
-    {
-      "name": "progresoAsincronico.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
     },
     {
       "name": "insertarSolicitudAlumno.usecase.spec.ts",
@@ -1769,6 +2588,34 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "informacionProgramaFiltro.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "entregable.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "tabActividades.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "dateFormat.pipe.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
       "name": "enviar-correo.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1776,9 +2623,16 @@
       "feature": "mensajeria"
     },
     {
-      "name": "getEstadoMatriculado.usecase.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "costoAdministrativo.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "comentarioOportunidad.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1790,11 +2644,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "ocurrenciaActividad.entity.spec.ts",
+      "name": "getEstadoMatriculado.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "obtenerCiudadPorPais.usecase.spec.ts",
@@ -1804,11 +2658,32 @@
       "feature": "catalogo"
     },
     {
+      "name": "gestionPagos.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "ocurrenciaActividad.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
       "name": "catalogo.state.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
       "feature": "catalogo"
+    },
+    {
+      "name": "getInformacionFaltanteDocente.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "cursosMatriculados.state.spec.ts",
@@ -1825,13 +2700,6 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "getInformacionFaltanteDocente.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
       "name": "informacionPrograma.state.spec.ts",
       "tests": 6,
       "passed": 6,
@@ -1839,11 +2707,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerPersonalAgendaLiberada.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "chatPortalWebMensaje.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
-      "feature": "personal"
+      "feature": "atencionCliente"
     },
     {
       "name": "obtenerPreferenciaAlumno.useCase.spec.ts",
@@ -1851,6 +2719,13 @@
       "passed": 3,
       "failed": 0,
       "feature": "comunicacionPreferencia"
+    },
+    {
+      "name": "obtenerPersonalAgendaLiberada.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "personal"
     },
     {
       "name": "obtenerSolicitudesAgrupadas.usecase.spec.ts",
@@ -1867,11 +2742,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerListaPais.usecase.spec.ts",
+      "name": "updateOportunidad.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "catalogo"
+      "feature": "planificacion"
     },
     {
       "name": "solicitarBeneficio.usecase.spec.ts",
@@ -1881,23 +2756,23 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "updateOportunidad.usecase.spec.ts",
+      "name": "obtenerListaPais.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "planificacion"
-    },
-    {
-      "name": "programaPorpais.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
+      "feature": "catalogo"
     },
     {
       "name": "getCombosSubCategorias.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "programaPorpais.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -1923,6 +2798,13 @@
       "feature": "actividad"
     },
     {
+      "name": "whatsapp-file-card.component.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
       "name": "cerrarActividad.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1937,6 +2819,27 @@
       "feature": "planificacion"
     },
     {
+      "name": "getCursosMatriculadosAlumno.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "beneficioMatricula.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "correo.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
       "name": "marcarComoLeido.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -1944,7 +2847,7 @@
       "feature": "comercial"
     },
     {
-      "name": "getCursosMatriculadosAlumno.usecase.spec.ts",
+      "name": "informacionEmpresaPorMatricula.adapter.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -1958,11 +2861,18 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "correo.entity.spec.ts",
+      "name": "solicitudAlumno.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "pasarelaPago.entity.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
-      "feature": "mensajeria"
+      "feature": "atencionCliente"
     },
     {
       "name": "accordion-item.component.spec.ts",
@@ -1972,7 +2882,21 @@
       "feature": "shared"
     },
     {
+      "name": "informacionProgramaFiltro.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "generarConstanciaPorMatricula.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "matriculaCabeceraDatosCertificado.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -1986,18 +2910,18 @@
       "feature": "planificacion"
     },
     {
-      "name": "insertarCabecera.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
       "name": "obtenerFechaReprogramacionEjecutada.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "insertarCabecera.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "envioCondicionesCaracteristicas.state.spec.ts",
@@ -2014,11 +2938,18 @@
       "feature": "actividad"
     },
     {
-      "name": "custom-select.component.spec.ts",
-      "tests": 7,
-      "passed": 7,
+      "name": "informacionEmpresaPorMatricula.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
-      "feature": "shared"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "resumenAcademicoadapter.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "updateActividad.usecase.spec.ts",
@@ -2028,11 +2959,18 @@
       "feature": "planificacion"
     },
     {
-      "name": "duplicateFlujo.usecase.spec.ts",
-      "tests": 4,
-      "passed": 4,
+      "name": "getDatosEnvioAlumno.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "portalAcademicoSincronico.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "resumenAcademicoOnline.mapper.spec.ts",
@@ -2042,7 +2980,14 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "getDatosEnvioAlumno.usecase.spec.ts",
+      "name": "duplicateFlujo.usecase.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "curso.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -2056,13 +3001,6 @@
       "feature": "planificacion"
     },
     {
-      "name": "documentoLegal.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "getFlujoById.usecase.spec.ts",
       "tests": 4,
       "passed": 4,
@@ -2070,11 +3008,18 @@
       "feature": "planificacion"
     },
     {
-      "name": "modal-select-template.component.spec.ts",
-      "tests": 7,
-      "passed": 7,
+      "name": "matriculaCabeceraDatosCertificado.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "shared"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoLegal.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "getHistorialWhatsApp.usecase.spec.ts",
@@ -2091,6 +3036,13 @@
       "feature": "planificacion"
     },
     {
+      "name": "modalAgregarCompromiso.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "getActividadesAgenda.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -2103,6 +3055,20 @@
       "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "restablecerBeneficio.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getActividadCompleta.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "sidebar-menu-sub-button.component.spec.ts",
@@ -2119,32 +3085,18 @@
       "feature": "planificacion"
     },
     {
-      "name": "activity-carousel.component.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "getActividadCompleta.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
-      "name": "restablecerBeneficio.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "resumenAcademicoAonline.state.spec.ts",
       "tests": 6,
       "passed": 6,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerDetalleCorreo.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     },
     {
       "name": "matriculaAlumno.mapper.spec.ts",
@@ -2161,18 +3113,32 @@
       "feature": "alumno"
     },
     {
-      "name": "obtenerDetalleCorreo.usecase.spec.ts",
+      "name": "solicitudCertificadoFisico.dto.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
     },
     {
-      "name": "modal-wrapper.component.spec.ts",
+      "name": "tarifario.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerEmpresaPaginacion.useCase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
-      "feature": "shared"
+      "feature": "empresa"
+    },
+    {
+      "name": "sentinelDetalle.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "resumenAcademicoOnline.state.spec.ts",
@@ -2189,18 +3155,18 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerEmpresaPaginacion.useCase.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "modalComentarioEncuesta.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
-      "feature": "empresa"
+      "feature": "atencionCliente"
     },
     {
-      "name": "obtenerPlantillas.usecase.spec.ts",
+      "name": "modal-wrapper.component.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "shared"
     },
     {
       "name": "actualizarSolicitudAlumno.usecase.spec.ts",
@@ -2210,9 +3176,37 @@
       "feature": "actividad"
     },
     {
+      "name": "obtenerPlantillas.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "registroPortalWeb.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "generarPlantillaWhatsapp.state.spec.ts",
       "tests": 6,
       "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "tipoCurso.enum.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getCombosOrigen.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2222,13 +3216,6 @@
       "passed": 4,
       "failed": 0,
       "feature": "actividad"
-    },
-    {
-      "name": "getCombosOrigen.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
     },
     {
       "name": "obtenerArbolOcurrencias.usecase.spec.ts",
@@ -2252,6 +3239,13 @@
       "feature": "actividad"
     },
     {
+      "name": "obtenerCorreoBody.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "registroPortalWeb.state.spec.ts",
       "tests": 6,
       "passed": 6,
@@ -2259,11 +3253,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerCorreoBody.usecase.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "beneficios.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
     },
     {
       "name": "getAlumno.useCase.spec.ts",
@@ -2273,9 +3267,16 @@
       "feature": "alumno"
     },
     {
-      "name": "semaforoFinancieroOportunidad.state.spec.ts",
-      "tests": 5,
-      "passed": 5,
+      "name": "collapsible-trigger.directive.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "estadoMatriculado.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2294,30 +3295,9 @@
       "feature": "actividad"
     },
     {
-      "name": "collapsible-trigger.directive.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "sentinelDetalle.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "metric-card.component.spec.ts",
+      "name": "semaforoFinancieroOportunidad.state.spec.ts",
       "tests": 5,
       "passed": 5,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "whatsappMensaje.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2329,9 +3309,30 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "matriculaWebinar.mapper.spec.ts",
+      "name": "whatsappMensaje.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sentinelDetalle.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacionEmpresaPorMatricula.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "panel-comentario-actividad.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2343,6 +3344,20 @@
       "feature": "actividad"
     },
     {
+      "name": "encuesta.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "prioridad-tab.enum.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "enviarMensaje.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
@@ -2350,7 +3365,14 @@
       "feature": "comercial"
     },
     {
-      "name": "informacionEmpresaPorMatricula.mapper.spec.ts",
+      "name": "matriculaWebinar.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "chatPortalWeb.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -2371,39 +3393,11 @@
       "feature": "actividad"
     },
     {
-      "name": "chatPortalWeb.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "obtenerPEspecificosAccesoTemporal.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
-    },
-    {
-      "name": "modal-busqueda.service.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "enviarAccesosPortal.state.spec.ts",
-      "tests": 6,
-      "passed": 6,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "eliminarCorreo.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "comercial"
     },
     {
       "name": "accordion-content.component.spec.ts",
@@ -2413,11 +3407,53 @@
       "feature": "shared"
     },
     {
+      "name": "modal-busqueda.service.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "datosCursoMatricula.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "enviarAccesosPortal.state.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "costoAdministrativo.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "obtenerCentrosCosto.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "detail.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "eliminarCorreo.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "comercial"
     },
     {
       "name": "envioCondicionesCaracteristicas.mapper.spec.ts",
@@ -2434,13 +3470,6 @@
       "feature": "actividad"
     },
     {
-      "name": "obtenerEstadosMatricula.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "actividad"
-    },
-    {
       "name": "obtenerAsesorCertificados.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
@@ -2448,7 +3477,14 @@
       "feature": "actividad"
     },
     {
-      "name": "obtenerAbandonados.usecase.spec.ts",
+      "name": "modalDetalleTransacciones.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerEstadosMatricula.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
@@ -2469,9 +3505,37 @@
       "feature": "actividad"
     },
     {
+      "name": "obtenerAbandonados.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "matriculaCabeceraDatosCertificado.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "metricasATC.state.spec.ts",
       "tests": 6,
       "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "revisarSolicitudAlumno.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "proyectoAplicacion.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2481,13 +3545,6 @@
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
-    },
-    {
-      "name": "proyectoAplicacion.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
     },
     {
       "name": "obtenerPagosAtrasados.usecase.spec.ts",
@@ -2502,6 +3559,13 @@
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "mensajeWhatsapp.entity.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "obtenerReservadoSinDeuda.usecase.spec.ts",
@@ -2525,20 +3589,6 @@
       "feature": "actividad"
     },
     {
-      "name": "obtenerContestanCortan.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "actividad"
-    },
-    {
-      "name": "sentinelFinanciero.state.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
       "name": "catalogo.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -2546,7 +3596,7 @@
       "feature": "catalogo"
     },
     {
-      "name": "obtenerPagoCuotaAlDia.usecase.spec.ts",
+      "name": "obtenerContestanCortan.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
@@ -2560,14 +3610,42 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerCompromisoPago.usecase.spec.ts",
+      "name": "programaPorpais.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sentinelFinanciero.state.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "MensajeWhatsapp.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "portalAcademicoAsincronico.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerPagoCuotaAlDia.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
     },
     {
-      "name": "obtenerPreReporteCr.usecase.spec.ts",
+      "name": "obtenerCompromisoPago.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
@@ -2581,11 +3659,46 @@
       "feature": "actividad"
     },
     {
-      "name": "obtenerPorAbandonar.usecase.spec.ts",
+      "name": "medio-pago.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cursoMatriculado.adapter.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "metricasATC.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "obtenerPreReporteCr.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "modalEncuesta.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "estructuraCurricular.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "obtenerEnEvaluacion.usecase.spec.ts",
@@ -2602,11 +3715,39 @@
       "feature": "actividad"
     },
     {
+      "name": "obtenerPorAbandonar.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
       "name": "obtenerSolicitudesRealizadas.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "obtenerSolicitudesPendientes.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "recuperacion.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cronogramaPago.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "ciudadCombo.entity.spec.ts",
@@ -2616,7 +3757,7 @@
       "feature": "catalogo"
     },
     {
-      "name": "obtenerSolicitudesPendientes.usecase.spec.ts",
+      "name": "obtenerReportadoCr.usecase.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
@@ -2637,6 +3778,20 @@
       "feature": "actividad"
     },
     {
+      "name": "obtenerPagosDelDia.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "proyectoAplicacion.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "comentarioOportunidad.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -2644,18 +3799,25 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "obtenerReportadoCr.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "cursoMatriculado.entity.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
-      "name": "obtenerPagosDelDia.usecase.spec.ts",
+      "name": "publicoObjetivo.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "historialIteraccionesOportunidad.port.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "agenda.state.spec.ts",
@@ -2679,9 +3841,30 @@
       "feature": "actividad"
     },
     {
+      "name": "actualizarSentinelAlumno.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "solicitudCertificadoFisico.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "enviarCondicionesCaracteristicas.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "solicitudCertificadoFisico.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2693,32 +3876,11 @@
       "feature": "actividad"
     },
     {
-      "name": "actualizarSentinelAlumno.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "prerequisitos.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
-    },
-    {
-      "name": "correo-detalle.entity.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "comercial"
-    },
-    {
-      "name": "getActividadById.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
-      "name": "ocurrenciasEspeciales.config.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "actividad"
     },
     {
       "name": "obtenerBicDeuda.usecase.spec.ts",
@@ -2728,6 +3890,41 @@
       "feature": "actividad"
     },
     {
+      "name": "certificacion.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "resumenAcademicoAonline.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getActividadById.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "presentacion.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "chatPortalWeb.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "user.entity.spec.ts",
       "tests": 5,
       "passed": 5,
@@ -2735,16 +3932,16 @@
       "feature": "auth"
     },
     {
-      "name": "modal-busqueda-wrapper.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "correo-detalle.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "shared"
+      "feature": "comercial"
     },
     {
-      "name": "obtenerHistorialAsesora.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "ocurrenciasEspeciales.config.spec.ts",
+      "tests": 5,
+      "passed": 5,
       "failed": 0,
       "feature": "actividad"
     },
@@ -2756,11 +3953,11 @@
       "feature": "shared"
     },
     {
-      "name": "colorSemaforoFinanciero.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
+      "name": "obtenerHistorialAsesora.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
-      "feature": "atencionCliente"
+      "feature": "actividad"
     },
     {
       "name": "cursoFecha.mapper.spec.ts",
@@ -2777,23 +3974,65 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "getActividades.usecase.spec.ts",
+      "name": "progresoAsincronico.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "beneficios.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
-      "feature": "planificacion"
-    },
-    {
-      "name": "obtenerBics.usecase.spec.ts",
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "whatsappMensaje.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "modalidades.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "criterio.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "expositores.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "colorSemaforoFinanciero.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "objetivos.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "inversion.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2805,7 +4044,49 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "obtenerBics.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
       "name": "cursoMatriculado.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "oportunidad.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "comentarioActividad.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "programa.mapper.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getActividades.usecase.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "avanceOnline.entity.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
@@ -2840,6 +4121,20 @@
       "feature": "atencionCliente"
     },
     {
+      "name": "documentosLegales.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "deleteActividad.usecase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
       "name": "date-format.pipe.spec.ts",
       "tests": 8,
       "passed": 8,
@@ -2854,18 +4149,11 @@
       "feature": "shared"
     },
     {
-      "name": "programa.mapper.spec.ts",
-      "tests": 3,
-      "passed": 3,
-      "failed": 0,
-      "feature": "atencionCliente"
-    },
-    {
-      "name": "deleteActividad.usecase.spec.ts",
+      "name": "matriculaWebinar.dto.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
-      "feature": "planificacion"
+      "feature": "atencionCliente"
     },
     {
       "name": "duplicateActividad.usecase.spec.ts",
@@ -2878,6 +4166,13 @@
       "name": "datosEnvioAlumno.mapper.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacionEmpresaPorMatricula.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
       "feature": "atencionCliente"
     },
@@ -2896,11 +4191,11 @@
       "feature": "atencionCliente"
     },
     {
-      "name": "filtroActividadPayload.dto.spec.ts",
+      "name": "informacionBeneficiosSolicitado.dto.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "sidebar.component.spec.ts",
@@ -2908,6 +4203,20 @@
       "passed": 3,
       "failed": 0,
       "feature": "shared"
+    },
+    {
+      "name": "informacionProgramaFiltro.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "filtroActividadPayload.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
     },
     {
       "name": "dropdown-item.component.spec.ts",
@@ -2924,6 +4233,20 @@
       "feature": "planificacion"
     },
     {
+      "name": "costoAdministrativo.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sentinelDetalle.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "getContadoresCategorias.usecase.spec.ts",
       "tests": 1,
       "passed": 1,
@@ -2938,11 +4261,32 @@
       "feature": "actividad"
     },
     {
+      "name": "informacionProgramaPorIdPgeneral.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "combo.entity.spec.ts",
       "tests": 4,
       "passed": 4,
       "failed": 0,
       "feature": "catalogo"
+    },
+    {
+      "name": "datosAvanceAonlineDto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "guardarCompromisoPago.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "deleteFlujo.usecase.spec.ts",
@@ -2952,6 +4296,20 @@
       "feature": "planificacion"
     },
     {
+      "name": "informacionProgramaFiltro.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cursoMatriculado.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "collapsible-content.component.spec.ts",
       "tests": 2,
       "passed": 2,
@@ -2959,32 +4317,60 @@
       "feature": "shared"
     },
     {
-      "name": "getContadorAlertas.usecase.spec.ts",
-      "tests": 1,
-      "passed": 1,
-      "failed": 0,
-      "feature": "planificacion"
-    },
-    {
-      "name": "date.util.spec.ts",
-      "tests": 5,
-      "passed": 5,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "clasificacionTab.entity.spec.ts",
+      "name": "chatPortalWeb.dto.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
-      "name": "sidebar-group-action.component.spec.ts",
+      "name": "documentoLegal.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "matriculaWebinar.entity.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
-      "feature": "shared"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "asistencia.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "historialModificaciones.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "costosAdministrativos.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "beneficio-matricula.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoLegal.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "sidebar-provider.component.spec.ts",
@@ -2994,11 +4380,200 @@
       "feature": "shared"
     },
     {
+      "name": "informacionPrograma.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "enviarAccesosPortal.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "getContadorAlertas.usecase.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "precio-final.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoPrograma.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "historialCompromisoPago.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "infoAlternativa.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentosPrograma.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "sidebar-menu-action.component.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "shared"
+    },
+    {
+      "name": "programaPorpais.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "tarifarios.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "registroPortalWeb.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "date.util.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "actualizarMetodoPago.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sidebar-group-action.component.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "cursoFecha.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "clasificacionTab.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "documentoLegal.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "metricasATC.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "enviarAccesosPortal.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "resumenAcademicoOnline.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "colorSemaforoFinanciero.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "proyectoAplicacion.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "avanceAonlineHoras.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "tarifario.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cronograma-cuota.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "matricula-combo.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "comentariosOportunidad.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "informacionCliente.state.spec.ts",
@@ -3015,6 +4590,13 @@
       "feature": "mensajeria"
     },
     {
+      "name": "solicitar-beneficio.command.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "matricula.dto.spec.ts",
       "tests": 3,
       "passed": 3,
@@ -3022,7 +4604,63 @@
       "feature": "actividad"
     },
     {
+      "name": "asistencia.dto.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "informacionCliente.facade.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "estadoMatriculado.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "programa.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "app.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "core"
+    },
+    {
+      "name": "cursoDetalleNota.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "programaPorPais.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "estado-beneficio.enum.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacion-programa.dto.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
@@ -3036,11 +4674,39 @@
       "feature": "actividad"
     },
     {
-      "name": "app.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "actualizarSentinelAlumno.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
       "failed": 0,
-      "feature": "core"
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "datosEnvioAlumno.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "insertarComentarioActividad.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "boton-comentario-actividad.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "boton-reporte-incidencia.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "tipoProgramacion.enum.spec.ts",
@@ -3050,7 +4716,42 @@
       "feature": "actividad"
     },
     {
+      "name": "modal-busqueda.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "sidebar-group-content.component.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "activity-table-atc.component.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "datosAvanceOnlineDto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "boton-conversaciones.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "sidebar-group-label.component.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
@@ -3064,7 +4765,7 @@
       "feature": "shared"
     },
     {
-      "name": "sidebar-group-label.component.spec.ts",
+      "name": "sidebar-separator.component.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
@@ -3085,20 +4786,6 @@
       "feature": "shared"
     },
     {
-      "name": "sidebar-separator.component.spec.ts",
-      "tests": 1,
-      "passed": 1,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
-      "name": "sidebar-menu-item.component.spec.ts",
-      "tests": 1,
-      "passed": 1,
-      "failed": 0,
-      "feature": "shared"
-    },
-    {
       "name": "sidebar-content.component.spec.ts",
       "tests": 1,
       "passed": 1,
@@ -3113,7 +4800,21 @@
       "feature": "shared"
     },
     {
-      "name": "sidebar-footer.component.spec.ts",
+      "name": "formasPago.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "dropdown-label.component.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "sidebar-menu-item.component.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
@@ -3127,7 +4828,7 @@
       "feature": "shared"
     },
     {
-      "name": "dropdown-label.component.spec.ts",
+      "name": "sidebar-footer.component.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
@@ -3148,11 +4849,123 @@
       "feature": "shared"
     },
     {
+      "name": "exoneracion-mora.command.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "datosCursoMatricula.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "transaccion.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "sidebar-menu.component.spec.ts",
       "tests": 1,
       "passed": 1,
       "failed": 0,
       "feature": "shared"
+    },
+    {
+      "name": "identificadoresMatriculaCombo.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "registroPortalWeb.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "programaMatriculado.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "registroPortalWeb.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "EnviarCondicionesCaracteristicas.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "actualizarSentinelAlumno.dto.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "compromiso.command.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "compromiso.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "programaPorpais.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "matricula-combo.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "medio-pago.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacionEmpresaPorMatricula.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "informacionProgramaPayload.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "tipoSolicitudOperaciones.enum.spec.ts",
@@ -3162,11 +4975,11 @@
       "feature": "actividad"
     },
     {
-      "name": "matriculaContext.port.spec.ts",
-      "tests": 2,
-      "passed": 2,
+      "name": "categoriaComentarioActividad.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
       "failed": 0,
-      "feature": "actividad"
+      "feature": "atencionCliente"
     },
     {
       "name": "clasificacionTabBusqueda.port.spec.ts",
@@ -3176,11 +4989,88 @@
       "feature": "actividad"
     },
     {
+      "name": "accesoAlumno.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "tarifario.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "cursoMatriculado.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "avanceAonlineHoras.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "pasarelaPagoPorAlumno.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "medio-pago.command.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
       "name": "actividadesAtc.port.spec.ts",
       "tests": 2,
       "passed": 2,
       "failed": 0,
       "feature": "actividad"
+    },
+    {
+      "name": "aprobar-beneficio.command.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "matriculaContext.port.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "actividad"
+    },
+    {
+      "name": "informacionProgramaFiltroPayload.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "colorSemaforoHistorialFinanciero.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
+    },
+    {
+      "name": "documentoLegalPayload.dto.spec.ts",
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "feature": "atencionCliente"
     },
     {
       "name": "estadoOcurrencia.enum.spec.ts",
@@ -3190,25 +5080,151 @@
       "feature": "actividad"
     },
     {
-      "name": "whatsapp-file-card.component.spec.ts",
+      "name": "areaFormacion.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "asentamientoMunicipio.entity.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "regionCiudad.entity.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "tipoIdentificador.entity.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "obtenerListaAreaFormacion.usecase.spec.ts",
       "tests": 3,
       "passed": 3,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "obtenerTipoIdentificador.usecase.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "obtenerCodigoCIIUPorId.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "obtenerEmpresaAutocomplete.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "obtenerCiudadMexicoByEstado.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "obtenerAsentamientosMexicoPorMunicipioId.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "catalogo.facade.spec.ts",
+      "tests": 11,
+      "passed": 11,
+      "failed": 0,
+      "feature": "catalogo"
+    },
+    {
+      "name": "categoria-color.enum.spec.ts",
+      "tests": 7,
+      "passed": 7,
       "failed": 0,
       "feature": "shared"
     },
     {
-      "name": "login-guard.spec.ts",
+      "name": "button.variants.spec.ts",
+      "tests": 11,
+      "passed": 11,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "accordion.variants.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "shared"
+    },
+    {
+      "name": "notification-sound.service.spec.ts",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "pais-codigo-telefono.spec.ts",
       "tests": 3,
       "passed": 3,
       "failed": 0,
-      "feature": "core"
+      "feature": "planificacion"
     },
     {
-      "name": "activity-table-atc.component.spec.ts",
-      "tests": 1,
-      "passed": 1,
+      "name": "getActividadById.usecase.spec.ts",
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
-      "feature": "shared"
+      "feature": "planificacion"
+    },
+    {
+      "name": "deleteActividad.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "duplicateActividad.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "deleteFlujo.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
+    },
+    {
+      "name": "duplicateFlujo.usecase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "planificacion"
     }
   ]
 }
