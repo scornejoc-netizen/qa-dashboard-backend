@@ -1,44 +1,44 @@
 {
   "project": "IntegraV7Interfaz",
-  "timestamp": "2026-05-07T08:30:00Z",
+  "timestamp": "2026-05-13T08:30:00Z",
   "agent": "jest-runner",
-  "version": "5.1",
-  "data_source": "VERIFIED - npx jest --coverage 2026-05-07",
+  "version": "6.0",
+  "data_source": "VERIFIED - npx jest --coverage 2026-05-13",
   "summary": {
-    "coverage_pct": 43.09,
-    "total_tests": 2679,
-    "passed": 2679,
+    "coverage_pct": 45.14,
+    "total_tests": 2779,
+    "passed": 2779,
     "failed": 0,
-    "test_suites": 727,
-    "duration_ms": 73051
+    "test_suites": 728,
+    "duration_ms": 167177
   },
   "coverage_real": {
     "statements": {
-      "pct": 43.48,
-      "covered": 13022,
+      "pct": 45.44,
+      "covered": 13607,
       "total": 29943
     },
     "branches": {
-      "pct": 20.92,
-      "covered": 2394,
+      "pct": 23.3,
+      "covered": 2666,
       "total": 11442
     },
     "functions": {
-      "pct": 30.11,
-      "covered": 2467,
+      "pct": 33.15,
+      "covered": 2716,
       "total": 8193
     },
     "lines": {
-      "pct": 43.09,
-      "covered": 11834,
+      "pct": 45.14,
+      "covered": 12398,
       "total": 27461
     }
   },
   "artifacts_by_feature": {
     "atencionCliente": {
       "total": 432,
-      "tested": 382,
-      "coverage_pct": 88.4
+      "tested": 383,
+      "coverage_pct": 88.7
     },
     "auth": {
       "total": 4,
@@ -5225,6 +5225,13 @@
       "passed": 3,
       "failed": 0,
       "feature": "planificacion"
+    },
+    {
+      "name": "tab-priority.service.spec.ts",
+      "tests": 38,
+      "passed": 38,
+      "failed": 0,
+      "feature": "atencionCliente"
     }
   ]
 }
