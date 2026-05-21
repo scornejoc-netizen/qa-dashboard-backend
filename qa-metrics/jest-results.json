@@ -1,36 +1,36 @@
 {
   "project": "IntegraV7Interfaz",
-  "timestamp": "2026-05-13T08:30:00Z",
+  "timestamp": "2026-05-20T08:30:00Z",
   "agent": "jest-runner",
-  "version": "6.0",
-  "data_source": "VERIFIED - npx jest --coverage 2026-05-13",
+  "version": "7.0",
+  "data_source": "VERIFIED - npx jest --coverage 2026-05-20 (final delivery)",
   "summary": {
-    "coverage_pct": 45.14,
-    "total_tests": 2779,
-    "passed": 2779,
+    "coverage_pct": 45.87,
+    "total_tests": 2891,
+    "passed": 2891,
     "failed": 0,
-    "test_suites": 728,
-    "duration_ms": 167177
+    "test_suites": 746,
+    "duration_ms": 47832
   },
   "coverage_real": {
     "statements": {
-      "pct": 45.44,
-      "covered": 13607,
+      "pct": 46.13,
+      "covered": 13815,
       "total": 29943
     },
     "branches": {
-      "pct": 23.3,
-      "covered": 2666,
+      "pct": 24.22,
+      "covered": 2772,
       "total": 11442
     },
     "functions": {
-      "pct": 33.15,
-      "covered": 2716,
+      "pct": 34.37,
+      "covered": 2816,
       "total": 8193
     },
     "lines": {
-      "pct": 45.14,
-      "covered": 12398,
+      "pct": 45.87,
+      "covered": 12597,
       "total": 27461
     }
   },
@@ -67,8 +67,8 @@
     },
     "mensajeria": {
       "total": 28,
-      "tested": 8,
-      "coverage_pct": 28.6
+      "tested": 13,
+      "coverage_pct": 46.4
     },
     "catalogo": {
       "total": 26,
@@ -77,8 +77,8 @@
     },
     "alumno": {
       "total": 22,
-      "tested": 6,
-      "coverage_pct": 27.3
+      "tested": 13,
+      "coverage_pct": 59.1
     },
     "comercial": {
       "total": 11,
@@ -5232,6 +5232,132 @@
       "passed": 38,
       "failed": 0,
       "feature": "atencionCliente"
+    },
+    {
+      "name": "correo-enviado-ventas.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "plantilla-whatsapp.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "plantilla-generada.entity.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "archivo-adjunto.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "historial-correo-response.entity.spec.ts",
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "enviar-mensaje-texto-whatsapp.usecase.spec.ts",
+      "tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "enviar-mensaje-archivo-whatsapp.usecase.spec.ts",
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "verificar-numero-validado-whatsapp.usecase.spec.ts",
+      "tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "feature": "mensajeria"
+    },
+    {
+      "name": "historialModificacionAlumno.entity.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "versionActual.entity.spec.ts",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "datosCobranza.entity.spec.ts",
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "encuestaAlumno.entity.spec.ts",
+      "tests": 27,
+      "passed": 27,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "matriculaAlumno.entity.spec.ts",
+      "tests": 12,
+      "passed": 12,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "obtenerVersionActual.useCase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "obtenerConteoEncuestas.useCase.spec.ts",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "obtenerDatosCobranza.useCase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "obtenerHistorialModificacionAlumno.useCase.spec.ts",
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "feature": "alumno"
+    },
+    {
+      "name": "obtenerMatriculasAlumno.useCase.spec.ts",
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "feature": "alumno"
     }
   ]
 }
