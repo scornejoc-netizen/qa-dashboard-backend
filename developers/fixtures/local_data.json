@@ -1,0 +1,1025 @@
+{
+  "developers": [
+    {
+      "full_name": "Alexis Arroyo Huarachi",
+      "level": "mid",
+      "email": "aarroyoh@bsginstitute.com",
+      "github_username": "aarroyoh-arch",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Arian Canaza Cuadros",
+      "level": "senior",
+      "email": "acanazac@bsginstitute.com",
+      "github_username": "bsg-acanazac",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Carlos Crispin Riquelme",
+      "level": "senior",
+      "email": "ccrispin@bsginstitute.com",
+      "github_username": "",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Crhistopher Tumi Roque",
+      "level": "junior",
+      "email": "ctumir@bsginstitute.com",
+      "github_username": "",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Deivid del Carpio",
+      "level": "junior",
+      "email": "ddelcarpio@bsginstitute.com",
+      "github_username": "",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Gilmer Quispe",
+      "level": "senior",
+      "email": "gquispe@bsginstitute.com",
+      "github_username": "gilmerqm",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Joseph Llanque Joño",
+      "level": "senior",
+      "email": "jllanque@bsginstitute.com",
+      "github_username": "jotalj",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Junior Llerena Ticona",
+      "level": "senior",
+      "email": "jllerenat@bsginstitute.com",
+      "github_username": "jllerenat-create",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Luis Humberto Oscata Flores",
+      "level": "mid",
+      "email": "loscataf@bsginstitute.com",
+      "github_username": "oscata-bsg",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Marco Villanueva Torres",
+      "level": "senior",
+      "email": "mvillanuevat@bsginstitute.com",
+      "github_username": "",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Miguel Valdivia Coazaca",
+      "level": "mid",
+      "email": "mvaldiviac@bsginstitute.com",
+      "github_username": "develop-mvaldiviac",
+      "active": true,
+      "joined_at": "2026-05-27"
+    },
+    {
+      "full_name": "Oscar Mamani Ayala",
+      "level": "junior",
+      "email": "omamania@bsginstitute.com",
+      "github_username": "Oscar-Mamani-Ayala",
+      "active": true,
+      "joined_at": null
+    }
+  ],
+  "sprints": [],
+  "requirements": [
+    {
+      "code": "REQ-001",
+      "title": "TUTOR_VIRTUAL",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "TUTOR_VIRTUAL",
+      "developers": [
+        "Crhistopher Tumi Roque"
+      ],
+      "sprint": null,
+      "created_at": "2025-11-24",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-11-24",
+      "delivered_at": "2025-11-27",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BITV/boards/35/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-002",
+      "title": "GENERAL",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "GENERAL",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2025-11-26",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-11-26",
+      "delivered_at": "2025-11-28",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIG/boards/68/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-003",
+      "title": "MONTO_PAGO",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "MONTO_PAGO",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-02",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-02",
+      "delivered_at": "2025-12-05",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIMP/boards/101/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-004",
+      "title": "WEBINAR",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "WEBINAR",
+      "developers": [
+        "Crhistopher Tumi Roque"
+      ],
+      "sprint": null,
+      "created_at": "2026-03-18",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-03-18",
+      "delivered_at": "2026-03-10",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIW/boards/134/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-005",
+      "title": "COMUN_ACADEM",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "COMUN_ACADEM",
+      "developers": [
+        "Crhistopher Tumi Roque"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-22",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-22",
+      "delivered_at": "2025-12-24",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BICA/boards/167/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-006",
+      "title": "SENTINEL",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "SENTINEL",
+      "developers": [
+        "Crhistopher Tumi Roque"
+      ],
+      "sprint": null,
+      "created_at": "2026-04-28",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-04-28",
+      "delivered_at": "2026-04-30",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://bsginstitute-team-stephano.atlassian.net/jira/software/c/projects/BIC/boards/372",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-007",
+      "title": "DBA_ATC",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "DBA_ATC",
+      "developers": [
+        "Deivid del Carpio"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-03",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-03",
+      "delivered_at": "2025-12-12",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIAC/boards/200/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-008",
+      "title": "DBA_INSCRIPCIONES",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "DBA_INSCRIPCIONES",
+      "developers": [
+        "Gilmer Quispe"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-03",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-03",
+      "delivered_at": "2025-12-11",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BII/boards/233/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-009",
+      "title": "DBA_CONTACTABILIDAD",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "DBA_CONTACTABILIDAD",
+      "developers": [
+        "Deivid del Carpio"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-16",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-16",
+      "delivered_at": "2025-12-17",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIC/boards/333/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-010",
+      "title": "AGENDA_COMERCIAL_V5/6",
+      "description": "Aplicar una regla de negocio en la Agenda Comercial que filtre las opciones del campo “Montos Pago” para mostrar únicamente “Crédito” cuando en “Tipo de descuento” se seleccione un descuento mayor al 20%.",
+      "type": "improvement",
+      "status": "done",
+      "space": "BSG_INT_AGENDA_COMERCIAL_V5/6",
+      "developers": [
+        "Junior Llerena Ticona"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-05",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-05",
+      "delivered_at": "2025-12-10",
+      "closed_at": "2025-12-10",
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BID/boards/366/timeline",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 5,
+          "passed": 5,
+          "executed_at": "2025-12-10",
+          "notes": ""
+        },
+        {
+          "test_type": "unit",
+          "total": 16,
+          "passed": 16,
+          "executed_at": "2025-12-10",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-011",
+      "title": "AGENDA_COMERCIAL_V5",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "AGENDA_COMERCIAL_V5",
+      "developers": [
+        "Carlos Crispin Riquelme"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-05",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-05",
+      "delivered_at": "2025-12-05",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BISD/boards/399/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-012",
+      "title": "MIGRACIÓN_V5_V6",
+      "description": "Migrar el módulo de marcación de asistencia actualmente disponible en Integra V4 hacia Integra V5, permitiendo registrar ingreso, salida a almuerzo, retorno de almuerzo y salida final, validando duplicados y tiempos de marcación.",
+      "type": "improvement",
+      "status": "done",
+      "space": "BSG_INT_MIGRACIÓN_V5_V6",
+      "developers": [
+        "Junior Llerena Ticona"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-11",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-11",
+      "delivered_at": "2025-12-12",
+      "closed_at": "2025-12-12",
+      "qa_bounces": 2,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIM/boards/465/timeline",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 5,
+          "passed": 3,
+          "executed_at": "2025-12-12",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-013",
+      "title": "DISCREPANCIAS AVANCE ACADÉMICO",
+      "description": "Centralizar el proceso técnico para asegurar que la información de progreso académico sea exacta y homogénea en ambos sistemas.",
+      "type": "bug",
+      "status": "done",
+      "space": "DISCREPANCIAS",
+      "developers": [
+        "Alexis Arroyo Huarachi"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-12",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-12",
+      "delivered_at": "2025-12-12",
+      "closed_at": "2025-12-13",
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BSG/boards/498/timeline",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 4,
+          "passed": 4,
+          "executed_at": "2025-12-13",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-014",
+      "title": "MIGRACIÓN_V5_V6",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "MIGRACIÓN_V5_V6",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-15",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-15",
+      "delivered_at": "2025-12-19",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIM/boards/465/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-015",
+      "title": "CORRECCIÓN_CERTIFICADOS",
+      "description": "Implementar corrección en el sistema de Agenda Comercial para que interprete correctamente la información de certificaciones desde el documento Sílabo en Integra. Actualmente, los campos \"Nombre de Certificación\" e \"Introducción Certificado\" se visualizan como dos certificados separados cuando deberían ser un único certificado consolidado.",
+      "type": "bug",
+      "status": "done",
+      "space": "BSG_INT_AGENDA_COMERCIAL_V5",
+      "developers": [
+        "Junior Llerena Ticona"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-19",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-19",
+      "delivered_at": "2025-12-22",
+      "closed_at": "2025-12-22",
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BICC/boards/432/timeline",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 3,
+          "passed": 3,
+          "executed_at": "2025-12-22",
+          "notes": ""
+        },
+        {
+          "test_type": "unit",
+          "total": 7,
+          "passed": 7,
+          "executed_at": "2025-12-22",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-016",
+      "title": "MODALIDADES_HORARIOS",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "MODALIDADES_HORARIOS",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2026-01-06",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-01-06",
+      "delivered_at": "2026-01-09",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIMH/boards/499/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-017",
+      "title": "AUTOMATIZACIÓN_WAVIX",
+      "description": "Se propone llevar a cabo una reestructuración del FrontEnd con el objetivo de integrarlo de manera más eficiente en el BackEnd, esta modificación permitirá aumentar la seguridad del sistema y facilitar la automatización en el proceso de actualización de versiones de Wavix.\r\nSe sugiere que esta reestructuración se realice de forma activa y versátil, considerando diversas opciones de diseño y funcionalidad.",
+      "type": "feature",
+      "status": "done",
+      "space": "AUTOMATIZACIÓN_WAVIX",
+      "developers": [
+        "Alexis Arroyo Huarachi"
+      ],
+      "sprint": null,
+      "created_at": "2025-12-23",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2025-12-23",
+      "delivered_at": "2025-12-29",
+      "closed_at": "2026-12-29",
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIAW/boards/532/timeline",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "integration",
+          "total": 10,
+          "passed": 10,
+          "executed_at": "2025-12-29",
+          "notes": ""
+        },
+        {
+          "test_type": "unit",
+          "total": 15,
+          "passed": 15,
+          "executed_at": "2025-12-29",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-018",
+      "title": "MODIFICACIÓN_LINKEDIN",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "MODIFICACIÓN_LINKEDIN",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-23",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-23",
+      "delivered_at": "2026-02-26",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIL/boards/565/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-019",
+      "title": "GESTIÓN_ACADÉMICA",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "GESTIÓN_ACADÉMICA",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-23",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-23",
+      "delivered_at": "2026-03-19",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIGA/boards/598/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-020",
+      "title": "VISUALIZACIÓN_WHATSAPP",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "VISUALIZACIÓN_WHATSAPP",
+      "developers": [
+        "Carlos Crispin Riquelme"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-16",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-16",
+      "delivered_at": "2026-02-17",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIVW/boards/664/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-021",
+      "title": "GESTIÓN_DATOS_RN2",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "GESTIÓN_DATOS_RN2",
+      "developers": [
+        "Crhistopher Tumi Roque"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-23",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-23",
+      "delivered_at": "2026-02-26",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIGDR/boards/697/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-023",
+      "title": "CONVENIO_DE_VOZ",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "CONVENIO_DE_VOZ",
+      "developers": [
+        "Junior Llerena Ticona"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-23",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-23",
+      "delivered_at": "2026-03-03",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BICDV/boards/763/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-024",
+      "title": "CALIFICADOR_IA",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "CALIFICADOR_IA",
+      "developers": [
+        "Alexis Arroyo Huarachi"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-23",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-23",
+      "delivered_at": "2026-03-11",
+      "closed_at": "2026-03-11",
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BICI/boards/730",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 3,
+          "passed": 3,
+          "executed_at": "2026-03-11",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-025",
+      "title": "BIC1_BIC2",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "BIC1_BIC2",
+      "developers": [
+        "Carlos Crispin Riquelme"
+      ],
+      "sprint": null,
+      "created_at": "2026-02-17",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-02-17",
+      "delivered_at": "2026-02-18",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-026",
+      "title": "ACTUALIZACIÓN_PMP",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "ACTUALIZACIÓN_PMP",
+      "developers": [
+        "Crhistopher Tumi Roque"
+      ],
+      "sprint": null,
+      "created_at": "2026-03-05",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-03-05",
+      "delivered_at": "2026-03-12",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIAP/boards/796/timeline",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-027",
+      "title": "CORREOS",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "CORREOS",
+      "developers": [
+        "Carlos Crispin Riquelme"
+      ],
+      "sprint": null,
+      "created_at": "2026-03-10",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-03-10",
+      "delivered_at": "2026-03-17",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/INT/boards/829/",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-028",
+      "title": "CONFIGURAR_GRABACIONES",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "CONFIGURAR_GRABACIONES",
+      "developers": [
+        "Marco Villanueva Torres"
+      ],
+      "sprint": null,
+      "created_at": "2026-03-16",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-03-16",
+      "delivered_at": "2026-03-20",
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIGO/boards/895",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-029",
+      "title": "FECHAS_FERIADOS",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "FECHAS_FERIADOS",
+      "developers": [
+        "Alexis Arroyo Huarachi"
+      ],
+      "sprint": null,
+      "created_at": "2026-04-27",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-04-27",
+      "delivered_at": "2026-04-28",
+      "closed_at": "2026-04-30",
+      "qa_bounces": 1,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIFF/boards/994/",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 5,
+          "passed": 4,
+          "executed_at": "2026-04-30",
+          "notes": ""
+        },
+        {
+          "test_type": "integration",
+          "total": 8,
+          "passed": 8,
+          "executed_at": "2026-04-30",
+          "notes": ""
+        },
+        {
+          "test_type": "unit",
+          "total": 20,
+          "passed": 20,
+          "executed_at": "2026-04-30",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-030",
+      "title": "MIGRACIÓN_V4_V5",
+      "description": "",
+      "type": "feature",
+      "status": "todo",
+      "space": "MIGRACIÓN_V4_V5",
+      "developers": [
+        "Carlos Crispin Riquelme"
+      ],
+      "sprint": null,
+      "created_at": "2026-05-11",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-05-11",
+      "delivered_at": null,
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": false,
+      "jira_url": "",
+      "notes": "",
+      "test_executions": []
+    },
+    {
+      "code": "REQ-031",
+      "title": "DASHBOARD_PLANIFICACIÓN",
+      "description": "",
+      "type": "feature",
+      "status": "done",
+      "space": "BSG_INT_DASHBOARD_PLANIFICACIÓN",
+      "developers": [
+        "Junior Llerena Ticona"
+      ],
+      "sprint": null,
+      "created_at": "2026-05-27",
+      "planned_start_date": "2026-05-18",
+      "planned_end_date": "2026-05-26",
+      "started_at": "2026-05-20",
+      "delivered_at": "2026-05-27",
+      "closed_at": null,
+      "qa_bounces": 1,
+      "production_bugs": 0,
+      "is_documented": false,
+      "jira_url": "",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 6,
+          "passed": 5,
+          "executed_at": "2026-05-27",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-032",
+      "title": "WHATSAPP_GP",
+      "description": "Implementar un botón de WhatsApp en la lista de postulantes para que el usuario pueda contactar directamente al candidato usando el número registrado en el sistema.",
+      "type": "feature",
+      "status": "released",
+      "space": "BSG_INT_GP_IMPLEMENTACION_WHATSAPP_GP",
+      "developers": [
+        "Alexis Arroyo Huarachi"
+      ],
+      "sprint": null,
+      "created_at": "2026-05-11",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-05-11",
+      "delivered_at": "2026-05-16",
+      "closed_at": "2026-05-18",
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIWG/boards/1093/timeline",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "api",
+          "total": 4,
+          "passed": 4,
+          "executed_at": "2026-05-18",
+          "notes": ""
+        },
+        {
+          "test_type": "e2e",
+          "total": 5,
+          "passed": 5,
+          "executed_at": "2026-05-18",
+          "notes": ""
+        },
+        {
+          "test_type": "unit",
+          "total": 20,
+          "passed": 20,
+          "executed_at": "2026-05-18",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-033",
+      "title": "INTEGRACIÓN_SEGUIMIENTO_ACADÉMICO",
+      "description": "Módulo de integración y seguimiento académico en Integra que centraliza el control de proyectos académicos, la evaluación docente y el control de asistencias, exponiendo dashboards nativos (Dashboards Parte 2). Incluye correcciones sobre Dashboard 1 y el ciclo completo de análisis, desarrollo y despliegue.\r\n\r\nCriterios de éxito globales:\r\n\r\nLos dashboards de proyectos, evaluación docente y asistencias se renderizan nativamente en Integra.\r\nEl reporte consolidado de encuestas docentes se genera automáticamente sin intervención manual.\r\nEl módulo CRUD de asistencias permite gestión por coordinación académica con trazabilidad.\r\nLos filtros específicos de cada dashboard funcionan correctamente.\r\nLas correcciones sobre Dashboard 1 quedan resueltas y validadas.",
+      "type": "feature",
+      "status": "in_progress",
+      "space": "BSG_INT_PLA_SEGUIMIENTO_ACADEMICO",
+      "developers": [
+        "Alexis Arroyo Huarachi",
+        "Junior Llerena Ticona"
+      ],
+      "sprint": null,
+      "created_at": "2026-05-22",
+      "planned_start_date": "2026-05-22",
+      "planned_end_date": "2026-06-03",
+      "started_at": "2026-05-22",
+      "delivered_at": null,
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": true,
+      "jira_url": "",
+      "notes": "",
+      "test_executions": [
+        {
+          "test_type": "e2e",
+          "total": 3,
+          "passed": 3,
+          "executed_at": "2026-05-25",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "code": "REQ-036",
+      "title": "RECEPCIÓN_PERSISTENCIA_WEBHOOKS_COMENTARIOS",
+      "description": "Se solicita la implementación de un servicio interno en la plataforma Integra que reciba y procese webhooks de Meta cuando se publique un comentario en posts de las páginas de Facebook administradas por la organización. El servicio debe parsear los campos relevantes del payload, persistirlos en IntegraDB (SQL Server) sin duplicados, y notifica mediante POST al bot de IA para que procese el comentario y responda automáticamente al usuario por Messenger, usando la misma página de Facebook a la que pertenece el post.\r\nEste desarrollo se apoya en la integración de Messenger ya existente en Integra, que gestiona la app de Meta, los Page Access Tokens y el patrón de comunicación con el bot de IA. El webhook de comentarios debería poder ser implementado como una extensión de esa infraestructura.",
+      "type": "feature",
+      "status": "in_progress",
+      "space": "BSG_INT_MKT_PERSISTENCIA_COMENTARIOS",
+      "developers": [
+        "Miguel Valdivia Coazaca"
+      ],
+      "sprint": null,
+      "created_at": "2026-05-26",
+      "planned_start_date": null,
+      "planned_end_date": null,
+      "started_at": "2026-05-27",
+      "delivered_at": null,
+      "closed_at": null,
+      "qa_bounces": 0,
+      "production_bugs": 0,
+      "is_documented": false,
+      "jira_url": "",
+      "notes": "",
+      "test_executions": []
+    }
+  ]
+}
