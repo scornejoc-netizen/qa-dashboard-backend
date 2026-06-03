@@ -184,6 +184,59 @@ class Requirement(models.Model):
         return f"{passed}/{total}"
 
 
+class UserStory(models.Model):
+    """Historia de Usuario — sub-unidad de trabajo dentro de un Requerimiento.
+
+    Cada requerimiento puede tener 0 o N HUs. La desviación de tiempo se mide
+    a nivel HU (planificada vs real) y el dashboard agrega esos valores para
+    construir la predicción del desarrollador.
+    """
+    STATUS_CHOICES = [
+        ('todo', 'Por hacer'),
+        ('in_progress', 'En desarrollo'),
+        ('qa', 'En QA'),
+        ('done', 'Entregada'),
+    ]
+
+    requirement = models.ForeignKey(
+        Requirement,
+        on_delete=models.CASCADE,
+        related_name='user_stories',
+        verbose_name='Requerimiento',
+    )
+    code = models.CharField(
+        'Código', max_length=20, blank=True,
+        help_text='Ej: HU-01, US-12. Opcional.',
+    )
+    title = models.CharField('Título', max_length=300)
+    description = models.TextField('Descripción', blank=True)
+    status = models.CharField('Estado', max_length=20, choices=STATUS_CHOICES, default='todo')
+
+    planned_start_date = models.DateField('Inicio planificado', null=True, blank=True)
+    planned_end_date = models.DateField('Entrega planificada', null=True, blank=True,
+                                         help_text='Se compara con la entrega real para la desviación.')
+    started_at = models.DateField('Inicio real', null=True, blank=True)
+    delivered_at = models.DateField('Entrega real', null=True, blank=True)
+
+    notes = models.TextField('Notas', blank=True)
+
+    class Meta:
+        ordering = ['requirement', 'code', 'id']
+        verbose_name = 'Historia de Usuario'
+        verbose_name_plural = 'Historias de Usuario'
+
+    def __str__(self):
+        ref = self.code or f"HU#{self.pk or '?'}"
+        return f"{self.requirement.code} / {ref} — {self.title[:50]}"
+
+    @property
+    def time_deviation_days(self):
+        """Desviación = entrega real − entrega planificada (días). None si falta alguna."""
+        if self.delivered_at and self.planned_end_date:
+            return (self.delivered_at - self.planned_end_date).days
+        return None
+
+
 class TestExecution(models.Model):
     TYPE_CHOICES = [
         ('unit', 'Unitarias'),

@@ -20,7 +20,7 @@ from pathlib import Path
 from django.apps import apps
 from django.core.management.base import BaseCommand
 
-from developers.models import Developer, Sprint, Requirement
+from developers.models import Developer, Sprint, Requirement, UserStory
 
 
 DEFAULT_OUTPUT = Path(apps.get_app_config('developers').path) / 'fixtures' / 'local_data.json'
@@ -95,6 +95,20 @@ class Command(BaseCommand):
                         }
                         for t in r.test_executions.all().order_by('test_type')
                     ],
+                    'user_stories': [
+                        {
+                            'code': hu.code,
+                            'title': hu.title,
+                            'description': hu.description,
+                            'status': hu.status,
+                            'planned_start_date': _date_str(hu.planned_start_date),
+                            'planned_end_date': _date_str(hu.planned_end_date),
+                            'started_at': _date_str(hu.started_at),
+                            'delivered_at': _date_str(hu.delivered_at),
+                            'notes': hu.notes,
+                        }
+                        for hu in r.user_stories.all().order_by('code', 'id')
+                    ],
                 }
                 for r in Requirement.objects.all().order_by('code')
             ],
@@ -104,10 +118,12 @@ class Command(BaseCommand):
             json.dump(data, f, ensure_ascii=False, indent=2)
 
         total_tests = sum(len(r['test_executions']) for r in data['requirements'])
+        total_hus = sum(len(r['user_stories']) for r in data['requirements'])
         self.stdout.write(self.style.SUCCESS(f"\nExportado a {path}"))
         self.stdout.write(
             f"  {len(data['developers'])} devs · "
             f"{len(data['sprints'])} sprints · "
             f"{len(data['requirements'])} reqs · "
+            f"{total_hus} HUs · "
             f"{total_tests} test_executions\n"
         )

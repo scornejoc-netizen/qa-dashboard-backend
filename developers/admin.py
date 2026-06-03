@@ -9,7 +9,7 @@ en el list_display y en el detalle, sin requerir queries adicionales.
 from django.contrib import admin
 from django.db.models import Sum
 from django.utils.html import format_html
-from .models import Developer, Sprint, Requirement, TestExecution
+from .models import Developer, Sprint, Requirement, TestExecution, UserStory
 
 
 def _quality_color(pct):
@@ -31,6 +31,32 @@ def _format_quality(pct):
         '<span style="color: {}; font-weight: 600;">{}%</span>',
         color, pct,
     )
+
+
+class UserStoryInline(admin.StackedInline):
+    model = UserStory
+    extra = 0
+    fields = (
+        ('code', 'title', 'status'),
+        'description',
+        ('planned_start_date', 'planned_end_date'),
+        ('started_at', 'delivered_at'),
+        ('deviation_display',),
+        'notes',
+    )
+    readonly_fields = ('deviation_display',)
+    classes = ('collapse',)
+
+    def deviation_display(self, obj):
+        dev = obj.time_deviation_days
+        if dev is None:
+            return format_html('<span style="color: #94a3b8;">{}</span>', '— (falta planificada o real)')
+        if dev > 0:
+            return format_html('<span style="color: #dc2626; font-weight:600;">+{} días de atraso</span>', dev)
+        if dev < 0:
+            return format_html('<span style="color: #16a34a; font-weight:600;">{} días de adelanto</span>', dev)
+        return format_html('<span style="color: #16a34a; font-weight:600;">{}</span>', 'A tiempo')
+    deviation_display.short_description = 'Desviación calculada'
 
 
 class TestExecutionInline(admin.TabularInline):
@@ -115,7 +141,7 @@ class RequirementAdmin(admin.ModelAdmin):
     autocomplete_fields = ['developers', 'sprint']
     date_hierarchy = 'delivered_at'
     list_per_page = 30
-    inlines = [TestExecutionInline]
+    inlines = [UserStoryInline, TestExecutionInline]
     fieldsets = (
         ('Identificación', {
             'fields': ('code', 'title', 'space', 'description', 'jira_url'),
@@ -209,6 +235,49 @@ class RequirementAdmin(admin.ModelAdmin):
     def weighted_quality_display(self, obj):
         return _format_quality(obj.weighted_quality)
     weighted_quality_display.short_description = 'Calidad ponderada'
+
+
+@admin.register(UserStory)
+class UserStoryAdmin(admin.ModelAdmin):
+    list_display = ('requirement', 'code', 'title_truncated', 'status_badge',
+                    'planned_end_date', 'delivered_at', 'deviation_display')
+    list_filter = ('status', 'requirement')
+    search_fields = ('code', 'title', 'requirement__code', 'requirement__title')
+    autocomplete_fields = ['requirement']
+    fieldsets = (
+        ('Identificación', {'fields': ('requirement', 'code', 'title', 'description', 'status')}),
+        ('Fechas planificadas', {'fields': ('planned_start_date', 'planned_end_date')}),
+        ('Fechas reales', {'fields': ('started_at', 'delivered_at')}),
+        ('Notas', {'fields': ('notes',)}),
+    )
+
+    def title_truncated(self, obj):
+        return obj.title if len(obj.title) <= 60 else obj.title[:57] + '...'
+    title_truncated.short_description = 'Título'
+
+    def status_badge(self, obj):
+        colors = {
+            'todo': '#6b7280', 'in_progress': '#2563eb',
+            'qa': '#f59e0b', 'done': '#059669',
+        }
+        bg = colors.get(obj.status, '#6b7280')
+        return format_html(
+            '<span style="background:{}; color:white; padding:2px 8px; '
+            'border-radius:4px; font-size:11px;">{}</span>',
+            bg, obj.get_status_display(),
+        )
+    status_badge.short_description = 'Estado'
+
+    def deviation_display(self, obj):
+        dev = obj.time_deviation_days
+        if dev is None:
+            return format_html('<span style="color: #94a3b8;">{}</span>', '—')
+        if dev > 0:
+            return format_html('<span style="color: #dc2626; font-weight:600;">+{} d</span>', dev)
+        if dev < 0:
+            return format_html('<span style="color: #16a34a; font-weight:600;">{} d</span>', dev)
+        return format_html('<span style="color: #16a34a; font-weight:600;">{}</span>', 'a tiempo')
+    deviation_display.short_description = 'Desviación'
 
 
 @admin.register(TestExecution)

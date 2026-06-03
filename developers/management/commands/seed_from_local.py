@@ -25,7 +25,7 @@ from django.apps import apps
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from developers.models import Developer, Sprint, Requirement, TestExecution
+from developers.models import Developer, Sprint, Requirement, TestExecution, UserStory
 
 
 DEFAULT_FIXTURE = Path(apps.get_app_config('developers').path) / 'fixtures' / 'local_data.json'
@@ -74,6 +74,7 @@ class Command(BaseCommand):
             'sprints_created': 0, 'sprints_updated': 0,
             'reqs_created': 0, 'reqs_updated': 0,
             'tests_created': 0, 'tests_updated': 0,
+            'hus_created': 0, 'hus_updated': 0,
         }
 
         ctx = transaction.atomic() if not dry_run else _NoopContext()
@@ -183,6 +184,10 @@ class Command(BaseCommand):
         devs = list(Developer.objects.filter(full_name__in=dev_names))
         req.developers.set(devs)
 
+        # User stories (HUs)
+        for hu in r.get('user_stories', []) or []:
+            self._sync_user_story(req, hu, stats)
+
         # Test executions
         for t in r.get('test_executions', []) or []:
             self._sync_test_execution(req, t, stats)
@@ -191,6 +196,34 @@ class Command(BaseCommand):
             self.style.SUCCESS(f"  [+] req creado: {code} ({len(devs)} dev(s))") if created
             else f"  [~] req actualizado: {code} ({len(devs)} dev(s))"
         )
+
+    def _sync_user_story(self, req, hu, stats):
+        """Idempotencia por (requirement, code) si code existe, sino por (requirement, title)."""
+        defaults = {
+            'description': hu.get('description', '') or '',
+            'status': hu.get('status', 'todo'),
+            'planned_start_date': hu.get('planned_start_date'),
+            'planned_end_date': hu.get('planned_end_date'),
+            'started_at': hu.get('started_at'),
+            'delivered_at': hu.get('delivered_at'),
+            'notes': hu.get('notes', '') or '',
+        }
+        code = hu.get('code') or ''
+        title = hu.get('title', '')
+        if not title:
+            return
+
+        if code:
+            defaults['title'] = title
+            obj, created = UserStory.objects.update_or_create(
+                requirement=req, code=code, defaults=defaults,
+            )
+        else:
+            defaults['code'] = ''
+            obj, created = UserStory.objects.update_or_create(
+                requirement=req, title=title, code='', defaults=defaults,
+            )
+        stats['hus_created' if created else 'hus_updated'] += 1
 
     def _sync_test_execution(self, req, t, stats):
         test_type = t.get('test_type')
@@ -217,6 +250,7 @@ class Command(BaseCommand):
         self.stdout.write(f"  Devs:     created={stats['devs_created']}, updated={stats['devs_updated']}")
         self.stdout.write(f"  Sprints:  created={stats['sprints_created']}, updated={stats['sprints_updated']}")
         self.stdout.write(f"  Reqs:     created={stats['reqs_created']}, updated={stats['reqs_updated']}")
+        self.stdout.write(f"  HUs:      created={stats['hus_created']}, updated={stats['hus_updated']}")
         self.stdout.write(f"  Tests:    created={stats['tests_created']}, updated={stats['tests_updated']}")
         self.stdout.write(self.style.NOTICE("----------------\n"))
 

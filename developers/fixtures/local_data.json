@@ -121,7 +121,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BITV/boards/35/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-002",
@@ -145,7 +146,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIG/boards/68/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-003",
@@ -169,7 +171,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIMP/boards/101/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-004",
@@ -193,7 +196,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIW/boards/134/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-005",
@@ -217,7 +221,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BICA/boards/167/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-006",
@@ -241,7 +246,8 @@
       "is_documented": true,
       "jira_url": "https://bsginstitute-team-stephano.atlassian.net/jira/software/c/projects/BIC/boards/372",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-007",
@@ -265,7 +271,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIAC/boards/200/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-008",
@@ -289,7 +296,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BII/boards/233/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-009",
@@ -313,7 +321,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIC/boards/333/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-010",
@@ -352,7 +361,8 @@
           "executed_at": "2025-12-10",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-011",
@@ -376,7 +386,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BISD/boards/399/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-012",
@@ -408,7 +419,8 @@
           "executed_at": "2025-12-12",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-013",
@@ -440,7 +452,8 @@
           "executed_at": "2025-12-13",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-014",
@@ -464,7 +477,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIM/boards/465/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-015",
@@ -503,7 +517,8 @@
           "executed_at": "2025-12-22",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-016",
@@ -527,7 +542,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIMH/boards/499/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-017",
@@ -566,7 +582,8 @@
           "executed_at": "2025-12-29",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-018",
@@ -590,7 +607,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIL/boards/565/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-019",
@@ -614,7 +632,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIGA/boards/598/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-020",
@@ -638,7 +657,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIVW/boards/664/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-021",
@@ -662,7 +682,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIGDR/boards/697/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-023",
@@ -686,7 +707,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BICDV/boards/763/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-024",
@@ -718,7 +740,8 @@
           "executed_at": "2026-03-11",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-025",
@@ -742,7 +765,8 @@
       "is_documented": true,
       "jira_url": "",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-026",
@@ -766,7 +790,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIAP/boards/796/timeline",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-027",
@@ -790,7 +815,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/INT/boards/829/",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-028",
@@ -814,7 +840,8 @@
       "is_documented": true,
       "jira_url": "https://jirabsg.atlassian.net/jira/software/c/projects/BIGO/boards/895",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-029",
@@ -860,7 +887,8 @@
           "executed_at": "2026-04-30",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-030",
@@ -884,7 +912,8 @@
       "is_documented": false,
       "jira_url": "",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     },
     {
       "code": "REQ-031",
@@ -899,7 +928,7 @@
       "sprint": null,
       "created_at": "2026-05-27",
       "planned_start_date": "2026-05-18",
-      "planned_end_date": "2026-05-26",
+      "planned_end_date": null,
       "started_at": "2026-05-20",
       "delivered_at": "2026-05-27",
       "closed_at": null,
@@ -916,7 +945,8 @@
           "executed_at": "2026-05-27",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-032",
@@ -962,7 +992,8 @@
           "executed_at": "2026-05-18",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-033",
@@ -995,7 +1026,8 @@
           "executed_at": "2026-05-25",
           "notes": ""
         }
-      ]
+      ],
+      "user_stories": []
     },
     {
       "code": "REQ-036",
@@ -1019,7 +1051,8 @@
       "is_documented": false,
       "jira_url": "",
       "notes": "",
-      "test_executions": []
+      "test_executions": [],
+      "user_stories": []
     }
   ]
 }

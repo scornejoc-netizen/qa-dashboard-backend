@@ -1,5 +1,19 @@
 from rest_framework import serializers
-from .models import Developer, Sprint, Requirement, TestExecution
+from .models import Developer, Sprint, Requirement, TestExecution, UserStory
+
+
+class UserStorySerializer(serializers.ModelSerializer):
+    status_display = serializers.CharField(source='get_status_display', read_only=True)
+    time_deviation_days = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = UserStory
+        fields = [
+            'id', 'code', 'title', 'description', 'status', 'status_display',
+            'planned_start_date', 'planned_end_date',
+            'started_at', 'delivered_at',
+            'time_deviation_days', 'notes',
+        ]
 
 
 class TestExecutionSerializer(serializers.ModelSerializer):
@@ -44,11 +58,13 @@ class RequirementListSerializer(serializers.ModelSerializer):
 
 class RequirementDetailSerializer(RequirementListSerializer):
     test_executions = TestExecutionSerializer(many=True, read_only=True)
+    user_stories = UserStorySerializer(many=True, read_only=True)
 
     class Meta(RequirementListSerializer.Meta):
         fields = RequirementListSerializer.Meta.fields + [
             'description', 'jira_url', 'notes',
             'closed_at',
+            'user_stories',
             'test_executions',
         ]
 
