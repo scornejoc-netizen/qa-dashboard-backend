@@ -11,6 +11,11 @@ python manage.py collectstatic --noinput
 # Migraciones — incluye developers (app del dashboard gerencial) y metrics (legacy IntegraV7)
 python manage.py migrate --noinput
 
+# Superusuario desde env vars (idempotente). No rompe el build si faltan las vars.
+# Setear DJANGO_SUPERUSER_USERNAME, DJANGO_SUPERUSER_PASSWORD (y opcionalmente _EMAIL)
+# en el panel del hosting (Render → Environment) para que se cree automáticamente.
+python manage.py ensure_superuser
+
 # Sincronización idempotente del fixture local (devs, sprints, requirements, tests).
 # Si el fixture no existe en el repo, este comando salta silenciosamente sin fallar.
 python manage.py seed_from_local
