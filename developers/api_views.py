@@ -150,14 +150,18 @@ def developers_dashboard(request):
     year, month = _parse_month_optional(request)
 
     developers = Developer.objects.filter(active=True)
+    total_devs = developers.count()
 
+    # Solo incluimos en la lista a los devs con al menos 1 requerimiento en el período.
+    # Los devs sin trabajo en ese mes no aparecen en la tabla del dashboard.
     dev_items = []
     for dev in developers:
         scorecard = _calculate_scorecard(dev, year, month)
-        dev_items.append({
-            **DeveloperSerializer(dev).data,
-            'scorecard': scorecard,
-        })
+        if scorecard['total_requirements'] > 0:
+            dev_items.append({
+                **DeveloperSerializer(dev).data,
+                'scorecard': scorecard,
+            })
 
     # KPIs globales — el total de requerimientos es DISTINCT (un req con N devs cuenta 1 vez)
     all_reqs = _filter_reqs_by_month(Requirement.objects.all(), year, month)
@@ -176,10 +180,8 @@ def developers_dashboard(request):
         'avg_quality': global_quality,
         'total_qa_bounces': all_reqs.aggregate(s=Sum('qa_bounces'))['s'] or 0,
         'total_production_bugs': all_reqs.aggregate(s=Sum('production_bugs'))['s'] or 0,
-        'active_developers_with_work': sum(
-            1 for i in dev_items if i['scorecard']['total_requirements'] > 0
-        ),
-        'total_developers': developers.count(),
+        'active_developers_with_work': len(dev_items),
+        'total_developers': total_devs,
     }
 
     # Datos listos para gráficos en el frontend
