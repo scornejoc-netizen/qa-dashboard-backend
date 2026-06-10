@@ -9,6 +9,7 @@ Filtro temporal: el parámetro `month` (YYYY-MM) es OPCIONAL.
 - Con `month` → se filtran los requerimientos creados O entregados en ese mes.
 """
 import statistics
+from calendar import monthrange
 from datetime import date
 from django.db.models import Sum, Q
 from django.shortcuts import get_object_or_404
@@ -40,13 +41,38 @@ def _parse_month_optional(request):
 
 
 def _filter_reqs_by_month(qs, year, month):
-    """Filtra requerimientos creados O entregados en el mes. Sin mes → sin filtro."""
+    """Filtra requerimientos activos durante el mes seleccionado.
+
+    Un requerimiento se considera activo en el mes M si CUALQUIERA de estos
+    rangos se solapa con M:
+      - Rango planificado [planned_start_date, planned_end_date]
+      - Rango real [started_at, delivered_at]
+
+    Si un rango tiene "fin abierto" (sin delivered_at o sin planned_end_date),
+    se considera activo desde el inicio hasta hoy/futuro.
+
+    Como fallback (req sin ninguna fecha), también incluye los creados en el mes.
+    """
     if year is None or month is None:
         return qs
+
+    first_day = date(year, month, 1)
+    last_day = date(year, month, monthrange(year, month)[1])
+
     return qs.filter(
-        Q(created_at__year=year, created_at__month=month)
-        | Q(delivered_at__year=year, delivered_at__month=month)
-    )
+        # Rango planificado solapa con el mes (ambos extremos definidos)
+        Q(planned_start_date__lte=last_day, planned_end_date__gte=first_day)
+        # Rango planificado con fin abierto — solo si el req aún NO se entregó
+        | Q(planned_start_date__lte=last_day,
+            planned_end_date__isnull=True,
+            delivered_at__isnull=True)
+        # Rango real solapa con el mes (con fin)
+        | Q(started_at__lte=last_day, delivered_at__gte=first_day)
+        # Rango real abierto (en curso, sin delivered_at)
+        | Q(started_at__lte=last_day, delivered_at__isnull=True)
+        # Fallback: creado en el mes (cuando no hay ni planned ni real)
+        | Q(created_at__year=year, created_at__month=month)
+    ).distinct()
 
 
 def _weighted_quality_for_reqs(req_ids):
