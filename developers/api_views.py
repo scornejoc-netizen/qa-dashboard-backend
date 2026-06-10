@@ -101,13 +101,39 @@ def _status_counts(reqs):
     }
 
 
-def _deviation_metrics(items):
-    """Estadísticas de desviación de tiempo (entrega real − planificada).
+def _collect_deviations(reqs):
+    """Recolecta las desviaciones de tiempo de un conjunto de requerimientos.
 
-    Acepta cualquier iterable cuyos elementos tengan la propiedad
-    `time_deviation_days` — actualmente usado con UserStory (predicción por HU).
+    Criterio (sin doble conteo):
+    - Si el requerimiento tiene HUs con desviación calculable → se usan esas
+      (granularidad fina: una entrada por HU).
+    - Si NO tiene HUs con desviación pero el requerimiento mismo tiene
+      entrega planificada + real → se usa la desviación a nivel requerimiento.
+
+    Devuelve (lista_de_desviaciones, cantidad_de_HUs).
     """
-    deviations = [i.time_deviation_days for i in items if i.time_deviation_days is not None]
+    values = []
+    total_hus = 0
+    for req in reqs.prefetch_related('user_stories'):
+        hu_devs = [
+            hu.time_deviation_days
+            for hu in req.user_stories.all()
+            if hu.time_deviation_days is not None
+        ]
+        total_hus += req.user_stories.count()
+        if hu_devs:
+            values.extend(hu_devs)
+        elif req.time_deviation_days is not None:
+            values.append(req.time_deviation_days)
+    return values, total_hus
+
+
+def _deviation_metrics(deviations):
+    """Estadísticas de desviación de tiempo a partir de una lista de días (enteros).
+
+    Positivo = atraso · Negativo = adelanto · 0 = a tiempo.
+    """
+    deviations = [d for d in deviations if d is not None]
     if not deviations:
         return {
             'avg_deviation_days': None,
@@ -134,8 +160,9 @@ def _deviation_metrics(items):
 def _calculate_scorecard(developer, year, month):
     """Métricas de un desarrollador. Sin year/month considera TODOS sus requerimientos.
 
-    La desviación se calcula a partir de las HISTORIAS DE USUARIO de los reqs,
-    no a nivel requerimiento (porque las fechas planificadas/reales viven en la HU).
+    La desviación se calcula por HU cuando el requerimiento tiene historias de
+    usuario con fechas, y a nivel requerimiento (planificada vs real) cuando no
+    las tiene. Así ningún requerimiento con datos queda fuera del cálculo.
     """
     reqs = _filter_reqs_by_month(developer.requirements.all(), year, month)
     req_ids = list(reqs.values_list('id', flat=True))
@@ -146,10 +173,10 @@ def _calculate_scorecard(developer, year, month):
     cycle_times = [r.cycle_time_days for r in reqs if r.cycle_time_days is not None]
     avg_cycle = round(sum(cycle_times) / len(cycle_times), 1) if cycle_times else None
 
-    # Desviación a nivel HU
-    hus = UserStory.objects.filter(requirement_id__in=req_ids)
-    deviation = _deviation_metrics(hus)
-    deviation['total_user_stories'] = hus.count()
+    # Desviación: HU si las hay, sino a nivel requerimiento (planificada vs real)
+    dev_values, total_hus = _collect_deviations(reqs)
+    deviation = _deviation_metrics(dev_values)
+    deviation['total_user_stories'] = total_hus
 
     return {
         'total_requirements': reqs.count(),
@@ -194,10 +221,10 @@ def developers_dashboard(request):
     all_req_ids = list(all_reqs.values_list('id', flat=True))
     global_quality, _, _ = _weighted_quality_for_reqs(all_req_ids)
     global_status = _status_counts(all_reqs)
-    # Desviación global también a nivel HU
-    all_hus = UserStory.objects.filter(requirement__in=all_reqs)
-    global_deviation = _deviation_metrics(all_hus)
-    global_deviation['total_user_stories'] = all_hus.count()
+    # Desviación global: mismo criterio (HU si hay, sino nivel requerimiento)
+    global_dev_values, global_total_hus = _collect_deviations(all_reqs)
+    global_deviation = _deviation_metrics(global_dev_values)
+    global_deviation['total_user_stories'] = global_total_hus
 
     global_kpis = {
         # Total de requerimientos del período (respeta el filtro de mes)
